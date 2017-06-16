@@ -1,0 +1,1 @@
+find -regex ".*gz" -exec du -ch {} \+ | sort -h

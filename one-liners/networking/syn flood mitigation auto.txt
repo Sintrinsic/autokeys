@@ -1,0 +1,1 @@
+iptables -t mangle -N syn; iptables -t mangle -I PREROUTING -p tcp -d $(netstat -panl | head -n 1000 | awk -F'[ \t:]+' '{print $4}' | sort | uniq -c | sort -n| tail -n1 | awk '{print $2}') --syn -m multiport --dports 80 -j syn; iptables -t mangle -I syn -j DROP; iptables -t mangle -I syn -m limit --limit 128/s --limit-burst 8 -j RETURN

@@ -1,0 +1,1 @@
+tail -n 100000 /usr/local/apache/logs/access_log  | grep "06/May/2016:13" | awk '{print $1}' | sort | uniq -c | sort -n | tail -n 10

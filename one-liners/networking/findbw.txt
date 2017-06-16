@@ -1,0 +1,1 @@
+findbwuser(){ iptables -I OUTPUT -p udp -m limit --limit 4/s -j LOG --log-uid --log-prefix "LOGUID:  " -d $1; sleep 5; tail -n 1000 /var/log/messages | grep $1; iptables -D OUTPUT -p udp -m limit --limit 4/s -j LOG --log-uid --log-prefix "LOGUID:  " -d $1  }; findbwuser

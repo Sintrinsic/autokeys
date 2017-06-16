@@ -1,0 +1,1 @@
+for dev in /sys/block/vd*/queue/scheduler; do cat $dev; done

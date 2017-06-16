@@ -1,0 +1,1 @@
+doveadm who | grep lemmus.com | awk -F'[()]' '{print $4}' | sort | uniq | while read line; do iptables -I INPUT -j DROP -m comment --comment "Reading too much email." -bdupree $(date +%D)" -s  $line; done

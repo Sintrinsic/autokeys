@@ -1,0 +1,1 @@
+vzps -fxo ctid,min_flt,maj_flt,cmd 2>/dev/null | cut -d" " -f-7| sort -nk3 | tail -n 20 | awk '{print $0; minf+=$2; majf+=$3;}END{print "Min:"minf,"Maj:"majf}' | column -t

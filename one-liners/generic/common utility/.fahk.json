@@ -1,0 +1,31 @@
+{
+    "matchCase": false,
+    "prompt": false,
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "usageCount": 1,
+    "description": "fahk",
+    "type": "phrase",
+    "abbreviation": {
+        "triggerInside": false,
+        "wordChars": "[\\w]",
+        "backspace": true,
+        "abbreviations": [
+            ";fahk"
+        ],
+        "immediate": false,
+        "ignoreCase": false
+    },
+    "modes": [
+        1
+    ],
+    "showInTrayMenu": false,
+    "sendMode": "<ctrl>+<shift>+v",
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "omitTrigger": false
+}

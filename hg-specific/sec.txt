@@ -1,0 +1,1 @@
+function sec(){ [ -e $(pwd|cut -d'/' -f-3)/.security/security.lock ] && echo && echo 'Security Lock File Exists:' && rm -i $(pwd|cut -d'/' -f-3)/.security/security.lock ; echo "screen -x  $1-scan"; screen -dmS $1-scan bash; sleep .3; screen -S $1-scan -p 0 -X stuff $'touch .skip_next_{hg,db}_backup; security -i 0 \n' ;}; sec 

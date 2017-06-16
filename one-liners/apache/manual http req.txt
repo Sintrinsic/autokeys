@@ -1,0 +1,1 @@
+httpreq(){ url="/"; [[ $3 ]] && url="/"$3; printf "GET $url HTTP/1.1\r\nHost: $1\r\n\r\n" | nc $2 80  | lynx --stdin --dump;}; httpreq

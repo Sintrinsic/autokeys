@@ -1,0 +1,1 @@
+function getinterface() { ifconfig | grep -B1 $(grep -C1 $1 /usr/local/apache/conf/httpd.conf | grep -oP "(?<=<VirtualHost ).*(?=:80>)" | sort -u | head -n1)" " | grep -oP ".*(?= Link )" ;}; getinterface

@@ -1,0 +1,1 @@
+vzstat -s iowt -d1 -o  id,mlat,proc,cpu,ior,iort,iow,iowt,rx,tx,rxt,txt,vm,km,fcnt

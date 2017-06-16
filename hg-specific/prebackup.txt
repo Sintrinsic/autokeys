@@ -1,0 +1,1 @@
+umi(){ [[ $1 =~ ^[A-Za-z]+-[0-9]+$ ]] && (mkdir -pv /home/hgtransfer/$1/{restore-from,backup-to}; for i in $(printf "mi\nui"); do $i $(pwd | cut -d"/" -f3) /home/hgtransfer/$1/pre-reset.$i.txt; done;)}; umi 

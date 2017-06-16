@@ -1,0 +1,2 @@
+fatips(){ tail -n 10000 /usr/local/apache/logs/error_log /usr/local/apache/logs/access_log | grep -iP "$1" | grep -oP "(?<=client )[0-9\.]*" |sort | uniq -c | sort -n |  awk '$1>50' | while read cnt line; do echo $cnt" "$line" ------------------"; iptables -nL | grep $line; done ; }; fatips "(admin|xmlrpc|wp-log|register)" 
+

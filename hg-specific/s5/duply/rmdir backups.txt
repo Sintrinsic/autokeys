@@ -1,0 +1,1 @@
+awk '/FAIL/{print $2}' /tmp/vmchk  | while read vm; do echo $vm;  fileCount=$(ls /backup/$vm | wc -l); [[ $fileCount -eq 0 ]] && rmdir /backup/$vm; done

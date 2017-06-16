@@ -1,0 +1,31 @@
+{
+    "matchCase": false,
+    "sendMode": "<ctrl>+<shift>+v",
+    "prompt": false,
+    "description": "snaporgs",
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "type": "phrase",
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "modes": [
+        1
+    ],
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "backspace": true,
+        "abbreviations": [
+            ";snaporgs"
+        ],
+        "immediate": false,
+        "triggerInside": false,
+        "ignoreCase": false
+    },
+    "usageCount": 0,
+    "omitTrigger": false,
+    "showInTrayMenu": false
+}

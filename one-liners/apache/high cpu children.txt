@@ -1,0 +1,1 @@
+ps fauxww | grep httpd | awk '$3>80{print $2}' | while read line; do lsof -p $line; done | grep -oP "/home\S*" | cut -d/ -f3 | sort | uniq -c | sort -n

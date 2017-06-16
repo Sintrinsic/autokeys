@@ -1,0 +1,1 @@
+gr(){ oio=$(oi -c $1); [[ $(echo "$oio" | wc -l) -gt 1 ]] && echo $1 || echo $oio;}; oi -c $(gr $(pwd | cut -d/ -f3)) | while read line; do find /home*/$line/access-logs/ -type f -regextype posix-extended ! -regex ".*(ssl|ftp).*"| while read file; do tail -n 1000 $file ; done ;done | curdom 

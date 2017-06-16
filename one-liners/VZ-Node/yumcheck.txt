@@ -1,0 +1,2 @@
+rpm -qa|wc -l; sudo -u zabbix /opt/zabbix/bin/yum_status;/opt/zabbix/bin/yum_status
+

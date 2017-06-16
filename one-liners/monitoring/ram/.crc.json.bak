@@ -1,0 +1,31 @@
+{
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "omitTrigger": false,
+    "modes": [
+        1
+    ],
+    "type": "phrase",
+    "description": "crc",
+    "matchCase": false,
+    "sendMode": "kb",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "abbreviations": [
+            ";crc"
+        ],
+        "backspace": true,
+        "immediate": false,
+        "ignoreCase": false,
+        "triggerInside": false
+    },
+    "prompt": false,
+    "showInTrayMenu": false,
+    "usageCount": 0
+}

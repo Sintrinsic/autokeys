@@ -1,0 +1,1 @@
+for i in `grep VmSwap /proc/*/status 2>/dev/null|sort -rnk2|head`;do pid=${i%/*};pid=${pid##*/};ctid=$(readlink /proc/${pid}/cwd|cut -d/ -f4 2>/dev/null);if [ "$(grep mysql /proc/${pid}/cmdline 2>/dev/null)" ];then echo "Rolling MySQL in $ctid";vzctl exec $ctid "service mysql restart";fi;done

@@ -1,0 +1,1 @@
+sys-snap -a  05/24  13:06 | grep -oP "(?<=HTTP_HOST=)[0-9\.]*.*(?<=PATH_INFO=)\S*" | sed 's/ .*PATH_INFO=//' | sort | uniq -c | sort -n

@@ -1,0 +1,1 @@
+echo "USER COUNT CPU_SUM CPU_AVG MEM_SUM MEM_AVG" | awk '{ printf("%10s%15s%15s%15s%15s%15s\n",$1,$2,$3,$4,$5,$6);}' ; /opt/hgmods/hgacct/sa --print-users | awk 'NR!=1 {a[$1]++;b[$1]=b[$1]+$2;c[$1]=c[$1]+$4;}END{for (i in a) printf("%10s %13.0f %15.2f %15.2f %15.2f %13.2f\n", i, a[i], b[i], b[i]/a[i], c[i], c[i]/a[i])}' | sort -n -k3 -r | head | egrep -v "root|nobody|mysql" 

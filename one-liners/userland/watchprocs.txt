@@ -1,0 +1,2 @@
+while true; do echo "-------- $(date) -------"; ps -u $(pwd | cut -d"/" -f3) ho %cpu,args | sed 's+'$(pwd)'+.+;s+/.*bin/php+php+'| awk '{ttl[$2" "$3]++;if(!high[$2" "$3] || high[$2" "$3]<$1){high[$2" "$3]=$1};ta+=$1}END{for(bin in ttl){print ttl[bin],high[bin],bin}; print "TTL: "ta}'|column -t; sleep 1; done 
+

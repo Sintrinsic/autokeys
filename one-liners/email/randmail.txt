@@ -1,0 +1,1 @@
+find /home/*/mail/*/*/cur -maxdepth 1 -type d | awk -F"/" '{print $(NF-1)"@"$(NF-2)}' | shuf -n1 | while read line; do pwtemp setmail $line; done

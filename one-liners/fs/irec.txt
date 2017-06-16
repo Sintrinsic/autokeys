@@ -1,0 +1,1 @@
+pwd | awk 'BEGIN{RS="/"}{path=path$1"/"; print path}'

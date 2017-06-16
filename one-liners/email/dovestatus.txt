@@ -1,0 +1,1 @@
+doveadm who | sort -nk2 | awk 'BEGIN{ttl=0}{ttl=ttl+$2; print $0} END{print "---- Total:("ttl") ----"}' | tail -n6

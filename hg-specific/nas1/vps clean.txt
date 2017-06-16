@@ -1,0 +1,1 @@
+perl <(GET http://monitor.labs.hostgator.com/scripts/vps_nascleanup); exit

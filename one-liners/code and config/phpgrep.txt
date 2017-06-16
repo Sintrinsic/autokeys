@@ -1,0 +1,1 @@
+function phpgrep(){ find . -type f -name "*.php" -exec grep -H "${1}" "{}" \;;} ; phpgrep 

@@ -1,0 +1,1 @@
+grep -oP ".*(?=: "$(echo $PWD|cut -d'/' -f3)")" /etc/userdomains | while read line; do [[ $(ls -lah /etc/proxy_conf/$line 2>/dev/null) ]] && (echo $line' Cached! Removing';rm -f /etc/proxy_conf/$line) || echo "$line ---good---"; done |column -t

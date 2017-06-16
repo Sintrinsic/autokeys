@@ -1,0 +1,9 @@
+df -h; cd $(df -h|grep /home|sort -rnk5|tail -1|awk '{print $6}');
+mkdir APACHE_LOGS_ARCHIVE
+chmod --reference=/usr/local/apache/logs/archive/ APACHE_LOGS_ARCHIVE/
+rsync -H -av --progress /usr/local/apache/logs/archive $PWD/APACHE_LOGS_ARCHIVE
+mv /usr/local/apache/logs/archive{,.bak}
+ln -s $PWD/APACHE_LOGS_ARCHIVE/archive /usr/local/apache/logs/archive
+ls -ld /usr/local/apache/logs/archive
+du -sh /usr/local/apache/logs/archive.bak $PWD/APACHE_LOGS_ARCHIVE/archive
+rm -rf /usr/local/apache/logs/archive.bak

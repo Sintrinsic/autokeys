@@ -1,0 +1,31 @@
+{
+    "showInTrayMenu": false,
+    "modes": [
+        1
+    ],
+    "prompt": false,
+    "abbreviation": {
+        "triggerInside": false,
+        "ignoreCase": false,
+        "abbreviations": [
+            ";flushorphans"
+        ],
+        "backspace": true,
+        "wordChars": "[\\w]",
+        "immediate": false
+    },
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "usageCount": 0,
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "description": "flushorphans",
+    "omitTrigger": false,
+    "type": "phrase",
+    "matchCase": false,
+    "sendMode": "<ctrl>+<shift>+v"
+}

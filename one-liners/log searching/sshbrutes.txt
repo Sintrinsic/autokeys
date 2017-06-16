@@ -1,0 +1,1 @@
+awk -F: '/[fF]ail/{ttl[$1]+=1}END{for(time in ttl){print time,ttl[time]}}' /var/log/secure | sort -nk4 | tail -n 10

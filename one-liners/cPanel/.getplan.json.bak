@@ -1,0 +1,31 @@
+{
+    "omitTrigger": false,
+    "modes": [
+        1
+    ],
+    "showInTrayMenu": false,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "sendMode": "kb",
+    "matchCase": false,
+    "type": "phrase",
+    "description": "getplan",
+    "prompt": false,
+    "abbreviation": {
+        "immediate": false,
+        "backspace": true,
+        "abbreviations": [
+            ";getpkg"
+        ],
+        "ignoreCase": false,
+        "triggerInside": false,
+        "wordChars": "[\\w]"
+    },
+    "usageCount": 0
+}

@@ -1,0 +1,1 @@
+/usr/local/eig_zabbix/sbin/raidcheck/bin/megasasctl -vvvvvv 2>/dev/null | awk '$1~/a[0-9]+e[0-9]+s[0-9]+/{print $1, $0}'| while read ids rest; do echo "$(echo $ids| sed 's/a/c/;s/\([esc]\)/\/\1/g;' | while read line; do /usr/local/eig_zabbix/sbin/raidcheck/bin/storcli64 $line show | grep -A2 "EID:Slt" | tail -n1 | awk -vid=$line '{print $2}'; done) $rest"; done | column -t 

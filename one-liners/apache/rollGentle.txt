@@ -1,0 +1,1 @@
+service httpd stop; while pgrep -P 1 -f /usr/local/apache/bin/httpd >/dev/null; do sleep .1; done; sleep 1; montool clearsemaphores; service httpd startssl

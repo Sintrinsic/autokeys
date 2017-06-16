@@ -1,0 +1,31 @@
+{
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "abbreviations": [
+            ";ahitspikes"
+        ],
+        "backspace": true,
+        "triggerInside": false,
+        "ignoreCase": false,
+        "immediate": false
+    },
+    "description": "hitspikes",
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "type": "phrase",
+    "modes": [
+        1
+    ],
+    "matchCase": false,
+    "showInTrayMenu": false,
+    "prompt": false,
+    "sendMode": "kb",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "omitTrigger": false,
+    "usageCount": 0
+}

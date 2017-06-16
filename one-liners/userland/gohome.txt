@@ -1,0 +1,1 @@
+gohome(){ [[ $(hostname | grep "^vps") ]] && vzctl enter $1 || cd $(getent passwd "$1" | cut -d: -f6) ;}; gohome

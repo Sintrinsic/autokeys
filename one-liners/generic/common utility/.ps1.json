@@ -1,0 +1,31 @@
+{
+    "showInTrayMenu": false,
+    "type": "phrase",
+    "sendMode": "<ctrl>+<shift>+v",
+    "prompt": false,
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "description": "ps1",
+    "usageCount": 0,
+    "omitTrigger": false,
+    "matchCase": false,
+    "abbreviation": {
+        "ignoreCase": false,
+        "backspace": true,
+        "wordChars": "[\\w]",
+        "abbreviations": [
+            ";ps1"
+        ],
+        "immediate": false,
+        "triggerInside": false
+    },
+    "modes": [
+        1
+    ]
+}

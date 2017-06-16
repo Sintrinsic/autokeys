@@ -1,0 +1,1 @@
+tail -n 10000 /usr/local/apache/logs/error_log | grep wp-log | grep -oP "(?<=client )[0-9\.]*" | sort | uniq -c | sort -n | awk '$1>50{print $2}' | while read line; do echo $line"------------------"; iptables -nL | grep $line; done

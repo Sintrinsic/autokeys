@@ -1,0 +1,1 @@
+function downtime(){ od=0; (zcat $1||cat $1) | awk -F"[  []" '/HTTP\/1.." (200|301|302)/{print $5}' | sed 's/:/  /;s&/&-&g' | while read line; do nd=$(date --date="$line"  "+%s"); echo $line" "$(( $nd - $od ));od=$nd; done | awk '{if($NF > 400){print $0}}';  }; downtime 

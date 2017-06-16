@@ -1,0 +1,10 @@
+<?php
+$files = scandir("./");
+$current = $_GET["start"];  
+echo "<div style='background-color:white;top:0px;height:30px;width:100%;position:fixed;'><a href=?start=".($current-100).">last</a> <a href=?start=".($current+100).">next</a></div><br><br>";
+foreach($files as $key=>$file){
+   if($key >= $current && $key < ($current + 100)){
+        echo "<img src='$file' height=200px>";
+    }
+};
+?>

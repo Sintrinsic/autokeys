@@ -1,0 +1,1 @@
+ps fauxww | awk '$1!~/(root|mailnull|mailman|nginx|zabbix|nobody|nscd|mysql|ntp|named)/&&!/(dovecot|webmaild|\/bin\/php)/{print $0}';echo "Exim users ----------------";ps fauxww | awk '/exim/{print $1}' | sort | uniq -c | sort -n

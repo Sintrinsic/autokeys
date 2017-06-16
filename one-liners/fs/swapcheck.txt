@@ -1,0 +1,1 @@
+grep VmSwap /proc/*/status 2>/dev/null | sort -nk2 | tail -n5 | while read line; do fp=$(echo $line | cut -d: -f1); echo $line" "$(stat --format="%U" $fp)" "$(grep -oP "(?<=Name\S).*" $fp); done | column -t

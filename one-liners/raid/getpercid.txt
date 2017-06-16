@@ -1,0 +1,1 @@
+percDatafromSerial(){ /var/lib/einarc/tools/lsi_megacli/cli -pdlist -a0 | awk -F":" '/Enclosure Device ID/,/Drive has flagged/{lines[$1]=$0}/'$1'/{mtrue=1}/Drive has flagged/&&mtrue==1{mtrue=0;for(line in lines){print lines[line]}}'; } ; percDatafromSerial

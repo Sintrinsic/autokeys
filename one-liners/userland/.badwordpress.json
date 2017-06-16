@@ -1,0 +1,31 @@
+{
+    "showInTrayMenu": false,
+    "usageCount": 0,
+    "prompt": false,
+    "matchCase": false,
+    "sendMode": "<ctrl>+<shift>+v",
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "type": "phrase",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "description": "badwordpress",
+    "omitTrigger": false,
+    "abbreviation": {
+        "immediate": false,
+        "abbreviations": [
+            ";badwordpress"
+        ],
+        "backspace": true,
+        "ignoreCase": false,
+        "wordChars": "[\\w]",
+        "triggerInside": false
+    },
+    "modes": [
+        1
+    ]
+}

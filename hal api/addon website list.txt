@@ -1,0 +1,1 @@
+hallistsites(){ hal addon_action id $1 action website_list | sed 's/website_list//'| awk '/website id/{printf $3" "}/dir_path/{printf $2"\n"}'; }; hallistsites

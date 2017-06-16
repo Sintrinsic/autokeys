@@ -1,0 +1,31 @@
+{
+    "usageCount": 0,
+    "prompt": false,
+    "type": "phrase",
+    "matchCase": false,
+    "omitTrigger": false,
+    "sendMode": "<ctrl>+<shift>+v",
+    "abbreviation": {
+        "backspace": true,
+        "ignoreCase": false,
+        "triggerInside": false,
+        "abbreviations": [
+            ";deadline"
+        ],
+        "wordChars": "[\\w]",
+        "immediate": false
+    },
+    "description": "deadline switch",
+    "modes": [
+        1
+    ],
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "showInTrayMenu": false
+}

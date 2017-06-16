@@ -1,0 +1,1 @@
+ps fauxww | grep -v grep | grep -oP "(?<=backupadmin - )\S*" | while read line; do oi $line ; done | sort | uniq -c | sort -n

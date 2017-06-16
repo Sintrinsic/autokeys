@@ -1,0 +1,31 @@
+{
+    "description": "bambeast",
+    "showInTrayMenu": false,
+    "modes": [
+        1
+    ],
+    "matchCase": false,
+    "sendMode": "kb",
+    "prompt": false,
+    "omitTrigger": false,
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "type": "phrase",
+    "usageCount": 2,
+    "abbreviation": {
+        "ignoreCase": false,
+        "backspace": true,
+        "abbreviations": [
+            ";bambeast"
+        ],
+        "wordChars": "[\\w]",
+        "triggerInside": false,
+        "immediate": false
+    },
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    }
+}

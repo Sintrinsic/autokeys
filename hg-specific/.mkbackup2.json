@@ -1,0 +1,31 @@
+{
+    "abbreviation": {
+        "immediate": false,
+        "ignoreCase": false,
+        "abbreviations": [
+            ";prebackup2"
+        ],
+        "wordChars": "[\\w]",
+        "backspace": true,
+        "triggerInside": false
+    },
+    "matchCase": false,
+    "showInTrayMenu": false,
+    "sendMode": "kb",
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "omitTrigger": false,
+    "usageCount": 0,
+    "description": "mkbackup2",
+    "type": "phrase",
+    "prompt": false,
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "modes": [
+        1
+    ]
+}

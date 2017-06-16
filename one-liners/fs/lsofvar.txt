@@ -1,0 +1,1 @@
+find /var -newermt "$(date --date="5 minutes ago")" -size +2M -ls | grep -vP "/var/(lib/mysql|log)" | sort -nk7

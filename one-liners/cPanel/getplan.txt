@@ -1,0 +1,1 @@
+cat /var/cpanel/packages/"$(grep -oP "(?<=PLAN=).*" /var/cpanel/users/$(pwd | cut -d"/" -f3))"

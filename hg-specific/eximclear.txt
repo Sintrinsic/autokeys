@@ -1,0 +1,1 @@
+perl <(GET http://git.hgfix.net/eximclear/eximclear) -v -c -b

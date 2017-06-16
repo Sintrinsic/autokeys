@@ -1,0 +1,4 @@
+iptables -t mangle -N syn
+iptables -t mangle -I PREROUTING -p tcp -d $ip --syn -m multiport --dports 8080,$port -j syn
+iptables -t mangle -I syn -j DROP
+iptables -t mangle -I syn -m limit --limit 128/s --limit-burst 8 -j RETURN

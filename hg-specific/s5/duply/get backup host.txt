@@ -1,0 +1,1 @@
+grep -v OLD /etc/fstab  | awk -F"[@: \t]+" '$2~/com/{print $2, $3}'

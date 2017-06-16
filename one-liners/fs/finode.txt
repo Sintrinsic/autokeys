@@ -1,0 +1,1 @@
+find -type d -name virtfs -prune -o -printf "%h\n" | cut -d/ -f-2| sort | uniq -c | sort -n  | awk '{ttl+=$1;print $0}END{print ttl" Total"}' | column -t;

@@ -1,0 +1,1 @@
+pgrep httpd| while read pid; do lsof -p $pid; done  | awk '$NF~/\//&&$NF!~/^\/(usr|lib64|opt|dev|var|SYS)/{print $NF}' | sort | uniq -c | sort -n

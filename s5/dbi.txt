@@ -1,0 +1,1 @@
+echo "$(curl -u admin: -sk https://vpsportal.accountservergroup.com/whereami.php?ip=$(grep -oP '(?<=^IPADDR=)[0-9\.]*' /etc/sysconfig/network-scripts/ifcfg-eth0)).accountservergroup.com" | awk -F'[:]' '{print $2;print "/backup/"$1;}'

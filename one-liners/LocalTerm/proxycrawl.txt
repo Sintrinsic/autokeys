@@ -1,0 +1,1 @@
+curl http://txt.proxyspy.net/proxy.txt 2>/dev/null | awk '$NF~/+/{print $1}' | sort -R|  tail | while read line; do export http_proxy=$line; out=$(curl --connect-timeout 3 -s -D - kevinkern.com -o /dev/null 2>/dev/null); echo "$out"; [[ $(echo "$out" | grep -P "(200|503)") ]] && break ; done; 

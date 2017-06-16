@@ -1,0 +1,1 @@
+killall -9 php php-cgi httpd;sleep 1;montool clearsemaphores;/etc/init.d/httpd start;sleep 2;scores;vmstat -SM 1 5

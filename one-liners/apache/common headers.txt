@@ -1,0 +1,1 @@
+function cch(){ ngrep -q "$1" -d any -W byline -n 500 dst port 80 | grep -v "^\.*$" | sort | uniq -c | sort -n;}; cch

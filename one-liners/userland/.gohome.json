@@ -1,0 +1,32 @@
+{
+    "omitTrigger": false,
+    "showInTrayMenu": false,
+    "matchCase": false,
+    "description": "gohome",
+    "sendMode": "<ctrl>+<shift>+v",
+    "usageCount": 19,
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "modes": [
+        1
+    ],
+    "abbreviation": {
+        "immediate": false,
+        "triggerInside": false,
+        "ignoreCase": false,
+        "wordChars": "[\\w]",
+        "backspace": true,
+        "abbreviations": [
+            ";gh",
+            ";ve"
+        ]
+    },
+    "type": "phrase",
+    "prompt": false
+}

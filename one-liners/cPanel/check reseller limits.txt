@@ -1,0 +1,3 @@
+gr(){ oio=$(oi -c $1); [[ $(echo "$oio" | wc -l) -gt 1 ]] && echo $1 || echo $oio;}; oi -c $(gr $(pwd | cut -d/ -f3)) | while read line; do perm=$(ls /dev/shm/limit/$(awk -F: '/'$line'/{print $3}' /etc/passwd) 2>/dev/null|| echo --------------); res=$(grep -lP "(?<=HOST )BLOCK" /home/$line/public_html/.htaccess 2>/dev/null || echo ------------); sqlstatus=$(sqltool $line | awk '/'$line'/&&$3~/[0-9]+/{ttl+=$3}END{if(ttl>0){ printf "BLOCKED"}else{ printf "-----" }}'); echo "$line $sqlstatus $perm "$res; done | sed '1 iUSER MYSQL PERM HTACCESS' | column -t 
+
+

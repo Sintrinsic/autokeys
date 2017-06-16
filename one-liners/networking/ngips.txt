@@ -1,0 +1,1 @@
+function ngmips(){ ngrep -q "$1" -d any -W byline -n 500 dst port 80 | grep -oP '(?<=^T )[0-9\.]*' | sort | uniq -c | sort -n;}; ngmips

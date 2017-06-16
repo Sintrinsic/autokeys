@@ -1,0 +1,1 @@
+gurl(){ pwd | awk -vfn=$1 'BEGIN{RS="/";print "/";} /./{cur=cur"/"$1; print cur;}' |tac | while read path; do grep -B2 "DocumentRoot $path$" /usr/local/apache/conf/httpd.conf && break; done | awk -vprwd=$(pwd) '/Name/{printf "http://"$2}/Root/{sub($2,"",prwd); printf prwd"/'$1'\n"}'; }; gurl

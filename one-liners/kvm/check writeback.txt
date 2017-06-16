@@ -1,0 +1,1 @@
+inst=$(virsh list --all | awk '/instance/{inst=$2;cnt+=1;}END{if(cnt==1){print inst}}'); virsh dumpxml $inst | grep writeback

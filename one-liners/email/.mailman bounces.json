@@ -1,0 +1,31 @@
+{
+    "prompt": false,
+    "matchCase": false,
+    "modes": [
+        1
+    ],
+    "abbreviation": {
+        "abbreviations": [
+            ";mailmanbounces"
+        ],
+        "ignoreCase": false,
+        "immediate": false,
+        "wordChars": "[\\w]",
+        "backspace": true,
+        "triggerInside": false
+    },
+    "usageCount": 0,
+    "description": "mailman bounces",
+    "type": "phrase",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "showInTrayMenu": false,
+    "omitTrigger": false,
+    "sendMode": "<ctrl>+<shift>+v"
+}

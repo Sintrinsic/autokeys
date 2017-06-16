@@ -1,0 +1,1 @@
+optdbs(){ ouser=$(pwd | cut -d"/" -f3); [[ $1 ]] && ouser=$1; muser=${ouser:0:8}; mysql -NBe "show databases like '"$muser"_%';"| while read line; do mysqlcheck -o $line; done }; optdbs

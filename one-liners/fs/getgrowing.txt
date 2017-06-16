@@ -1,0 +1,1 @@
+getGrowing(){ hdir="/home"; [[ $1 ]] && hdir="/home$1"; for i in $(seq 1 2);do repquota -v $hdir  |awk '/^[0-9a-z]+ /&&/--/{print $1,$3}'; sleep 3; done |  awk 'BEGIN{vals['TTL']=0}{if(vals[$1]>0){print $1,(vals[$1]-$2)}else{vals[$1]=$2}}'  | sort -nk2 | uniq | tail -n 10 | column -t;}; getGrowing

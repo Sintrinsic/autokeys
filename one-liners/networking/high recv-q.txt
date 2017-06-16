@@ -1,0 +1,2 @@
+dip=$(ss -tnl src :80|awk '$2 > 400&&$1~/LISTEN/{print $4}' | cut -d: -f1 | head -n1); [[ $dip ]] &&   ngrep -q '(POST|GET)' -d any -W byline -n 500 dst port 80 and dst $dip |grep Host:|sort|uniq -c|sort -nk1|tail || echo "no recv-q issues"
+

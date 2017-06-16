@@ -1,0 +1,1 @@
+lsof /var | sort -nk7 | grep cpanelhorde | grep deleted | awk '{print $2}' | while read line; do kill $line; done

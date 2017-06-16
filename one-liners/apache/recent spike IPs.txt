@@ -1,0 +1,10 @@
+tail -n 10000 /home/*/access-logs/* | awk -F'[ [/:]' '$8~/[0-9]+/{print $8":"$9":"$10}' | sort | uniq -c | sort -n | tail -n1| while read cnt time; do echo "Spike of $cnt at $time:"; tail -n 10000 /home/*/access-logs/* | grep $time | awk '{print $1}' | sort | uniq -c | sort -n; done
+Spike of 121 at 09:07:43:
+      1 180.76.15.13
+      1 180.76.15.140
+      1 180.76.15.26
+      1 188.165.233.228
+      1 50.155.47.131
+      1 66.249.79.176
+      3 174.218.136.182
+    112 172.58.152.194

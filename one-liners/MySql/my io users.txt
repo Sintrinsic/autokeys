@@ -1,0 +1,1 @@
+strace -fffp "$(pgrep mysql | perl -pe 'chomp if eof;s/\n/ /')" -e trace=read,write -y -s0 2>&1 | head -n 10000|  grep -oP "((?<=/var/lib/mysql/)\w+|(?<=/home./)\w+)"| cut -d_ -f1 | sort | uniq -c | sort -n

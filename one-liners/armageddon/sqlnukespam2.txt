@@ -1,0 +1,1 @@
+ killall -9 php php-cgi; working=0; while [[ $working -eq 0 ]]; do procs=$(mysql -NBe "SELECT ID FROM INFORMATION_SCHEMA.PROCESSLIST WHERE USER != 'root'" | tr "\n" "," | sed 's/,$//') ; [[ $procs ]] && working=1 || echo "no list"; [[ $procs ]] && mysqladmin kill $procs && echo "killed" || working=0;  done

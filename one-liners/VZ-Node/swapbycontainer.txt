@@ -1,0 +1,1 @@
+echo "ctid     swap    kb"; grep -P "(VmSwap|envID)" /proc/*/status 2>/dev/null | sed 's/\/status.*://' | awk '{proc[$1]=proc[$1]" "$2" "$3}END{for(info in proc){print proc[info]}}' | awk '/[kmg]B/{ttl[$1]+=$2}END{for(ctid in ttl){print ctid,ttl[ctid], "kB"}}' | sort -nk2 | tail -n 10 | column -t

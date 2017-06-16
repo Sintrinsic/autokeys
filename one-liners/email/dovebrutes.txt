@@ -1,0 +1,1 @@
+tail -n 10000 /var/log/maillog | gawk -F"[<>,=]" '/auth failed/||/disconnected while authenticating/{print $9}' | sort | uniq -c | sort -n | tail -n 10;  ps fauxww | grep password | grep -v grep

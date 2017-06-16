@@ -1,0 +1,1 @@
+cnameanda(){ cnames=$(grep CNAME /var/named/$1.db); ars=$(grep "IN\s*A" /var/named/$1.db); echo "$cnames\n$ars" | awk '{print $1}' | sort | uniq -c | sort -n | awk '$1>1';}; cnameanda

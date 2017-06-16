@@ -1,0 +1,1 @@
+old=0;  for i in $(seq 0 4 | sort -r); do d=$(date --date="$i days ago" "+%m/%d"); sys-snap $d | awk -vdt=$d '/^\ *[0-9]/{print dt,$1}' ; done  | while read line; do ts=$(date --date="$line" '+%s'); diff=$(($ts - $old)); [[ $diff -gt 60 ]] && echo "$diff $line"; old=$ts; done

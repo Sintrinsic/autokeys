@@ -1,0 +1,1 @@
+vzps -eo pid,ctid,vsz,comm= | sort -nk2 | awk '$2>5{usrs[$2" "$4]+=$3}END{for(usr in usrs){print usrs[usr],usr}}' | sort -n| tail -n 10 | column -t

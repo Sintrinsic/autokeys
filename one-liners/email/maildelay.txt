@@ -1,0 +1,1 @@
+| awk '/<=/||/=>/{print $1,$2,$3}' | while read d time eid; do echo "$eid $(date --date="$d $time" +%s)"; done | awk '{eids[$1]=eids[$1]" "$2}END{for(eid in eids){print eid, eids[eid]}}'| while read eid st en; do echo "$eid $(( $en - $st ))"; done | sort -nk2

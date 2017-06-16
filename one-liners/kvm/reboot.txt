@@ -1,0 +1,1 @@
+off=0; inst=$(virsh list --all | awk '/instance/{inst=$2;cnt+=1;}END{if(cnt==1){print inst}}'); if [[ $inst ]] ; then  echo "Shutting down $inst..."; virsh destroy --graceful $inst; while [[ $off -eq 0 ]]; do echo "waiting on shutdown..."; virsh list --all | grep "shut off" && off=1 && virsh start $inst; sleep 1; done; fi

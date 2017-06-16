@@ -1,0 +1,31 @@
+{
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "abbreviations": [
+            ";ahitspikeips"
+        ],
+        "backspace": true,
+        "triggerInside": false,
+        "ignoreCase": false,
+        "immediate": false
+    },
+    "description": "hitspike ips",
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "type": "phrase",
+    "modes": [
+        1
+    ],
+    "matchCase": false,
+    "showInTrayMenu": false,
+    "prompt": false,
+    "sendMode": "<ctrl>+<shift>+v",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "omitTrigger": false,
+    "usageCount": 0
+}

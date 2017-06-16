@@ -1,0 +1,1 @@
+function queueprocs(){ ps fauxww | grep $1 | awk 'BEGIN{m=0}{m++;print "kill -SIGSTOP "$2"; echo \"kill -SIGCONT"m"\" | at now +"m" hours;"}'; }; queueprocs

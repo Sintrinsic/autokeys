@@ -1,0 +1,1 @@
+partitionWriters(){ pidstat -dl 1 |egrep $(fuser -uvm $1 2>&1|awk 'BEGIN{ORS="|"}$3~/F/{print $2}'|sed -e 's/.$//')|gawk '{if ($5 > '99') print $0}';}; partitionWriters

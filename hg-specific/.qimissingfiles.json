@@ -1,0 +1,31 @@
+{
+    "usageCount": 0,
+    "prompt": false,
+    "showInTrayMenu": false,
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "matchCase": false,
+    "sendMode": "kb",
+    "modes": [
+        1
+    ],
+    "description": "qimissingfiles",
+    "omitTrigger": false,
+    "type": "phrase",
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "immediate": false,
+        "abbreviations": [
+            ";qimf"
+        ],
+        "backspace": true,
+        "triggerInside": false,
+        "ignoreCase": false
+    }
+}

@@ -1,0 +1,1 @@
+ngrep -iq '(GET|POST)' -d any -W byline -n 500 dst port 8080 | grep -oP "(?<=^T )[0-9\.]*" | sort | uniq -c | sort -n

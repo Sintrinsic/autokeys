@@ -1,0 +1,1 @@
+grep -P "^\s*(basedir|show-safe-database|thread_concurrency|log|log_slow|storage_engine|additional_mem_pool|use_sys_malloc|record_buffer|record_buffer_size|table_cache|table_lock_wait_timeout|delayed_insert_limit|delayed_insert_timeout|delayed_queue_size|max_insert_delayed_threads|max_tmp_tables|old_passwords|profiling|profiling_history_size|skip-locking)" /etc/my.cnf

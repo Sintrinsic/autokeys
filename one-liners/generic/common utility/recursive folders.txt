@@ -1,0 +1,1 @@
+pwd | awk 'BEGIN{RS="/";print "/";} /./{cur=cur"/"$1; print cur;}'

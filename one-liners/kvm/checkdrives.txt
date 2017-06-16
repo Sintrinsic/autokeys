@@ -1,0 +1,1 @@
+for dev in /dev/sd[ab] ; do echo -e "\nDevice: ${dev}" ; smartctl -a ${dev} | egrep "^Serial|Hours|Reallocated|Pending|Uncorr|power-on" ; done ; echo

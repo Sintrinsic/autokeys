@@ -1,0 +1,1 @@
+awk '/Swap:/&&$2>0{split(FILENAME,out,"/"); procs[out[3]]+=$2;ttl+=$2}END{for(p in procs){print p,procs[p]}; print "Total: "ttl;}' /proc/*/smaps 2>/dev/null| sort -nk2 | tail -n 5 | while read pid kb; do echo "$kb $(ps fxxao pid,user,comm| grep $pid | grep -v grep)"; done 

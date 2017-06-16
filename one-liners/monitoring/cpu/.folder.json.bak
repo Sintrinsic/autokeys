@@ -1,0 +1,23 @@
+{
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "modes": [],
+    "type": "folder",
+    "title": "cpu",
+    "showInTrayMenu": false,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "abbreviations": [],
+        "backspace": true,
+        "immediate": false,
+        "ignoreCase": false,
+        "triggerInside": false
+    },
+    "usageCount": 0
+}

@@ -1,0 +1,1 @@
+ngrep -q '(administrator|xmlrpc|downloader|wp-login)' -d any -W byline -n 500 dst port 80 | awk '/^T /{print $4}' | cut -d: -f1 | sort | uniq -c | sort -n

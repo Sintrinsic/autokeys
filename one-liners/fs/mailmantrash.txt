@@ -1,0 +1,3 @@
+du -ch $(find /usr/local/cpanel/3rdparty/mailman/archives/private/ /usr/local/cpanel/3rdparty/mailman/lists/ -maxdepth 1 |  awk -F"[/_]" '$NF!~/mbox/&&$NF&&$0~/\./{print $NF,$0}'| while read dom path; do f=""; grep "$dom" /etc/userdomains  1>/dev/null && f+=1;  awk -F":" -v dom="$dom" '$7=dom{final=$0}END{if(final!~/REMOVE/){exit 1}}' /var/cpanel/accounting.log || f+=1;  grep $dom /usr/local/apache/conf/httpd.conf &>/dev/null && f+=1; [[ $f == "" ]] && (echo $path; [[ $(echo $path | grep "mailman/archives") ]] && echo $path".mbox"); done) | sort -h | tail -n 10
+
+

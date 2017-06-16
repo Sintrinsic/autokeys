@@ -1,0 +1,1 @@
+function unsecure(){ grep $1 /usr/local/apache/logs/error_log | grep ModSecurity | tail -n1 | awk -F'[\\[\\]"]' '{"wlmodsec "$25" "$17" n" |getline}'; }; unsecure example.com

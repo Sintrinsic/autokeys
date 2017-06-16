@@ -1,0 +1,29 @@
+{
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "omitTrigger": false,
+    "modes": [],
+    "type": "phrase",
+    "description": "vz enter",
+    "matchCase": false,
+    "sendMode": "kb",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "abbreviations": [
+            ";ve"
+        ],
+        "backspace": true,
+        "immediate": false,
+        "ignoreCase": false,
+        "triggerInside": false
+    },
+    "prompt": false,
+    "showInTrayMenu": false,
+    "usageCount": 3
+}

@@ -1,0 +1,1 @@
+kmp(){ printf "$(hostname)\n$(ps fauxww | grep $1 | grep -v grep)\n$(lsof -p $1)\n" | hpaste; kill -9 $1; }; kmp

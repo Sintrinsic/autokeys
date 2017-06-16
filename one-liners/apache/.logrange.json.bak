@@ -1,0 +1,31 @@
+{
+    "prompt": false,
+    "matchCase": false,
+    "type": "phrase",
+    "description": "logrange",
+    "usageCount": 2,
+    "abbreviation": {
+        "immediate": false,
+        "wordChars": "[\\w]",
+        "abbreviations": [
+            ";logrange2"
+        ],
+        "triggerInside": false,
+        "ignoreCase": false,
+        "backspace": true
+    },
+    "showInTrayMenu": false,
+    "omitTrigger": false,
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "sendMode": "kb",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "modes": [
+        1
+    ]
+}

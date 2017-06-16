@@ -1,0 +1,1 @@
+oe=0; lets=(O L); while true; do oe=$((oe + 1)); echo ${lets[$(($oe%2))]}| /usr/games/lolcat -f | tr -d "\n"; done

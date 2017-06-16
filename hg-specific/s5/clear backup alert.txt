@@ -1,0 +1,1 @@
+function ZabbixCall { KEY=$1; VALUE=$2; HOSTNAME=$(hostname | tr '[:upper:]' '[:lower:]' | sed "s/\.site5\.com/\.accountservergroup\.com/g"); /usr/local/bin/zabbix_sender -z `grep Server /etc/zabbix//zabbix_agent.conf|cut -d = -f 2` -c /etc/zabbix/zabbix_agentd.conf -s $HOSTNAME -k "$KEY" -o "$VALUE" > /dev/null 2>&1;}; ZabbixCall aybabtu.failed_backups "0.0"

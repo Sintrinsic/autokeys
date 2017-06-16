@@ -1,0 +1,31 @@
+{
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "abbreviations": [
+            ";aspikes"
+        ],
+        "backspace": true,
+        "triggerInside": false,
+        "ignoreCase": false,
+        "immediate": false
+    },
+    "description": "tail -n 100000 /usr/local/apache/logs/access_log  | awk -F\"[ \\t\\\\\\[:]+\" '{print $4\":\"$5\":00\"}' | sort | uniq -c | sort -rdk2",
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "type": "phrase",
+    "modes": [
+        1
+    ],
+    "matchCase": false,
+    "showInTrayMenu": false,
+    "prompt": false,
+    "sendMode": "kb",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "omitTrigger": false,
+    "usageCount": 0
+}

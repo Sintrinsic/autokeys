@@ -1,0 +1,1 @@
+ipls(){ (echo /usr/local/bin/php;ls /opt/php*/bin/php | sed 's/\*//') | while read line; do echo "$line : $($line -m | grep -i $1 &>/dev/null&& echo "Installed" || echo "Not installed")"; done | column -t ;}; ipls

@@ -1,0 +1,1 @@
+mkdir /root/spam_investigation; montool spam 2>/dev/null| awk '$2~/users/&&$1>1000{print $3}'| while read user; do echo "$user:" 1>&2; montool spam ec $user 2>/dev/null | tee /root/spam_investigation/$user.ec  | grep -aPA3 "(Logins used |Email addresses sent from |Current working)" | sed 's/,//g' | awk '$2~/[0-9]+/&&$2>4000'; done

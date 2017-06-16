@@ -1,0 +1,1 @@
+function getDomIP() { grep -C1 $1 /usr/local/apache/conf/httpd.conf | grep -oP "(?<=<VirtualHost ).*(?=:80>)" | sort -u | head -n1 ;}; getDomIP

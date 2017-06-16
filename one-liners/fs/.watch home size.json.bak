@@ -1,0 +1,31 @@
+{
+    "abbreviation": {
+        "abbreviations": [
+            ";whs"
+        ],
+        "triggerInside": false,
+        "wordChars": "[\\w]",
+        "immediate": false,
+        "backspace": true,
+        "ignoreCase": false
+    },
+    "prompt": false,
+    "usageCount": 0,
+    "matchCase": false,
+    "showInTrayMenu": false,
+    "description": "watch home size",
+    "modes": [
+        1
+    ],
+    "sendMode": "kb",
+    "type": "phrase",
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "omitTrigger": false,
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    }
+}

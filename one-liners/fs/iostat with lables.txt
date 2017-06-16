@@ -1,0 +1,1 @@
+(echo "Device:         rrqm/s   wrqm/s     r/s     w/s   rsec/s   wsec/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util"; iostat -x | awk '$1~/sd[a-z]/{print $0}' | while read disk rest; do dname=$(df -h | awk '/'$disk'/{print $NF}'); [[ $dname ]] &&  echo " $dname $disk $rest"; done)| column -t

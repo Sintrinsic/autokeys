@@ -1,0 +1,1 @@
+gr(){ oio=$(oi -c $1); [[ $(echo "$oio" | wc -l) -gt 1 ]] && echo $1 || echo $oio;}; grepResellerCurdom(){ oi $(gr $(pwd | cut -d/ -f3)) | awk '{print $1,$3}' | while read user dom; do echo "$dom:"; tail -n 1000 "/home/$user/access-logs/$dom" 2>/dev/null | curdom 2> /dev/null| grep -A1 "$1"; done;}; grepResellerCurdom

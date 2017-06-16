@@ -1,0 +1,1 @@
+oi(){ grep $1 /var/cpanel/resellers && (grep -r "OWNER=$1" /var/cpanel/users/* | awk -F"[/:]" '{print $5}') || grep OWNER /var/cpanel/users/$1;}; susers(){ users=$(oi $1 | perl -pe 'chomp if eof;s/\n/|/'); ls /var/cpanel/suspended | grep -P "($users)"; }; susers username  

@@ -1,0 +1,31 @@
+{
+    "type": "phrase",
+    "prompt": false,
+    "abbreviation": {
+        "triggerInside": false,
+        "backspace": true,
+        "immediate": false,
+        "abbreviations": [
+            ";allcacerts"
+        ],
+        "wordChars": "[\\w]",
+        "ignoreCase": false
+    },
+    "showInTrayMenu": false,
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "modes": [
+        1
+    ],
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "omitTrigger": false,
+    "usageCount": 0,
+    "matchCase": false,
+    "sendMode": "<ctrl>+<shift>+v",
+    "description": "allcacerts"
+}

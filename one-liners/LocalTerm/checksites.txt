@@ -1,0 +1,1 @@
+function checksites(){ if [ $1 ]; then u=$1; else u=$(pwd | cut -d"/" -f3) ; fi;  grep $u  /etc/userdomains | cut -d":" -f1 | while read line; do curl -sL -w "%{http_code} %{url_effective}" "$line" -o /dev/null; echo; done;}; checksites 

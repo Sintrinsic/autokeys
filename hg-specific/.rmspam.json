@@ -1,0 +1,31 @@
+{
+    "sendMode": "kb",
+    "usageCount": 0,
+    "prompt": false,
+    "matchCase": false,
+    "modes": [
+        1
+    ],
+    "type": "phrase",
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "abbreviation": {
+        "backspace": true,
+        "triggerInside": false,
+        "abbreviations": [
+            ";rmspam"
+        ],
+        "ignoreCase": false,
+        "wordChars": "[\\w]",
+        "immediate": false
+    },
+    "description": "rmspam",
+    "showInTrayMenu": false,
+    "omitTrigger": false,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    }
+}

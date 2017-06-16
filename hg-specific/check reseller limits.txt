@@ -1,0 +1,1 @@
+checkresellerlimits(){ ls $(awk -F: '/'$(oi -c $1 |perl -pe 'chomp if eof;s/\n/\/||\//')'/{print "/dev/shm/limit/"$3}' /etc/passwd) 2>/dev/null;}; checkresellerlimits

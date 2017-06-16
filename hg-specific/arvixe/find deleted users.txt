@@ -1,0 +1,1 @@
+find /var/cpanel/suspended/ -mtime +360 | cut -d/ -f5 | while read line; do ui $line 2>/dev/null | awk -F": *" '/User/{print ""; uname=$NF; printf uname" "}/Email/||/Domain/{printf $2" "}' | while read usr rest; do echo "$usr $(du -sh /home*/$usr) $rest";done ; done 

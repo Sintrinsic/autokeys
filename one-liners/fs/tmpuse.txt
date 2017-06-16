@@ -1,0 +1,1 @@
+user=$(pwd | cut -d"/" -f3) ; while true; echo "-----$(date)----" ;do lsof -u $user|grep '/tmp/'|awk '{print $2}'|while read pid; do ps --no-headers -Lp $pid -o args;lsof -u $user|grep '/tmp/';done;sleep 1;done 

@@ -1,0 +1,31 @@
+{
+    "type": "phrase",
+    "description": "updatelogs",
+    "matchCase": false,
+    "usageCount": 0,
+    "abbreviation": {
+        "backspace": true,
+        "triggerInside": false,
+        "immediate": false,
+        "abbreviations": [
+            ";updatelogs"
+        ],
+        "ignoreCase": false,
+        "wordChars": "[\\w]"
+    },
+    "modes": [
+        1
+    ],
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "omitTrigger": false,
+    "showInTrayMenu": false,
+    "sendMode": "kb",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "prompt": false
+}

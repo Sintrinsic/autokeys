@@ -1,0 +1,31 @@
+{
+    "omitTrigger": false,
+    "matchCase": false,
+    "modes": [
+        1
+    ],
+    "sendMode": "<ctrl>+<shift>+v",
+    "prompt": false,
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "description": "php versions",
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "showInTrayMenu": false,
+    "abbreviation": {
+        "immediate": false,
+        "ignoreCase": false,
+        "triggerInside": false,
+        "backspace": true,
+        "abbreviations": [
+            ";phpver"
+        ],
+        "wordChars": "[\\w]"
+    },
+    "usageCount": 0,
+    "type": "phrase"
+}

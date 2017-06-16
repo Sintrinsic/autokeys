@@ -1,0 +1,31 @@
+{
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "type": "phrase",
+    "sendMode": "kb",
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "triggerInside": false,
+        "backspace": true,
+        "abbreviations": [
+            ";sshbrute"
+        ],
+        "ignoreCase": false,
+        "immediate": false
+    },
+    "description": "sshbrutes",
+    "omitTrigger": false,
+    "showInTrayMenu": false,
+    "usageCount": 0,
+    "matchCase": false,
+    "prompt": false,
+    "modes": [
+        1
+    ],
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    }
+}

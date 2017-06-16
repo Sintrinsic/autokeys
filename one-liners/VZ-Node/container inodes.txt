@@ -1,0 +1,1 @@
+ctnodes(){ inodes /vz*/private/$(vzlist --all | awk '/'$1'/{print $1}')/ | awk -F'([ \t]+|root)' '$4{print $1,$2,$4}'| sed '1i INODES % PATH' | column -t;}; ctnodes

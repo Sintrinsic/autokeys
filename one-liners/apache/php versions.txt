@@ -1,0 +1,1 @@
+awk -F"[=:\"]" '/httpd-php/&&$1!~/^;/{print $1,$4}' /opt/suphp/etc/suphp.conf| while read mime binp; do echo "$($binp --version | awk '/^PHP/{print $1"-"$2}') $binp $mime"; done | sort -nk1 | sed '1iVERSION BIN MIME' | column -t 

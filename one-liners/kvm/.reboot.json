@@ -1,0 +1,31 @@
+{
+    "modes": [
+        1
+    ],
+    "usageCount": 4,
+    "omitTrigger": false,
+    "sendMode": "<ctrl>+<shift>+v",
+    "type": "phrase",
+    "description": "reboot",
+    "matchCase": false,
+    "abbreviation": {
+        "abbreviations": [
+            ";reboot"
+        ],
+        "backspace": true,
+        "triggerInside": false,
+        "ignoreCase": false,
+        "wordChars": "[\\w]",
+        "immediate": false
+    },
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "showInTrayMenu": false,
+    "prompt": false
+}

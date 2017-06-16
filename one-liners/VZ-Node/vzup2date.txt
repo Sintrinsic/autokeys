@@ -1,0 +1,1 @@
+vzps -C vzup2date -o 'pid,state,%cpu,%mem,args' || screen -S vzup2date -d -m -- /etc/cron.daily/z-vzup2date_status

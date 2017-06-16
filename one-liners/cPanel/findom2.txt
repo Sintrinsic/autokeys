@@ -1,0 +1,33 @@
+ function fdom() { bldgrn='\e[1;32m';bldred='\e[1;31m';txtrst='\e[0m'
+  if [[ $1 ]] ; then dom=$1 ; else read -p "Domain name?" dom; fi
+  echo -e "\nLocating remnants. (${bldred}found${txtrst}/${bldgrn}not found${txtrst})\n"
+  # checkin' dat httpd.conf
+  if [[ $(egrep -l "(\s|^)$dom($|\s)" "/usr/local/apache/conf/httpd.conf") ]]
+   then echo -e "${bldred}\c"
+   else echo -e "${bldgrn}\c"
+  fi ;echo -e "/usr/local/apache/conf/httpd.conf${txtrst}"
+  #checkin dem /etc/*domains files
+  domchk=$(egrep -l "(:|\s|^)$dom(:|$|\s)" /etc/*domains)
+  if [[ $domchk != "" ]]
+   then echo -e "${bldred}$domchk${txtrst}" | sed 's| |\n |g'
+  else echo -e "${bldgrn}/etc/*domains${txtrst}"
+  fi
+  # checkin' dem cpanel user files
+  domchk=$(egrep -l "(\s|^|=)$dom($|\s)" /var/cpanel/users/*)
+  if [[ $domchk != "" ]]
+   then echo -e "${bldred}$domchk${txtrst}" | sed 's| |\n |g'
+  else echo -e "${bldgrn}/var/cpanel/users/*${txtrst}"
+  fi
+  # checkin' dat cpanel userdata
+  domchk=$(egrep -rl "(\s|^|=)$dom($|\s)" /var/cpanel/userdata/*)
+  if [[ $domchk != "" ]]
+   then echo -e "${bldred}$domchk${txtrst}" | sed 's| |\n |g'
+  else echo -e "${bldgrn}/var/cpanel/userdata/*${txtrst}"
+  fi
+  # checkin' dat zone file
+  domchk=$(ls /var/named/ | egrep "^$dom.db$")
+  if [[ $domchk != "" ]]
+   then echo -e "${bldred}/var/named/$domchk${txtrst}" | sed 's| |\n |g'
+  else echo -e "${bldgrn}DNS Zone${txtrst}"
+  fi
+} 

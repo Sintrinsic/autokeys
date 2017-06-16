@@ -1,0 +1,23 @@
+{
+    "title": "DNS",
+    "type": "folder",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "usageCount": 0,
+    "showInTrayMenu": false,
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "modes": [],
+    "abbreviation": {
+        "abbreviations": [],
+        "immediate": false,
+        "ignoreCase": false,
+        "wordChars": "[\\w]",
+        "triggerInside": false,
+        "backspace": true
+    }
+}

@@ -1,0 +1,1 @@
+echo -e $(sar -q | awk '{ if ($5>N) {five="\\e[1;31m"$5"\\e[0m"} else {five="\\e[1;32m"$5"\\e[0m"} if ($6>N) {six="\\e[1;31m"$6"\\e[0m"} else {six="\\e[1;32m"$6"\\e[0m"} if ($7>N) {seven="\\e[1;31m"$7"\\e[0m"} else {seven="\\e[1;32m"$7"\\e[0m"} {printf "%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\n",$1,$2,$3,$4,five,six,seven}}' N=$(grep 'model name' /proc/cpuinfo| wc -l))

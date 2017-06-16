@@ -1,0 +1,1 @@
+pbip(){ plist=$(lsof -tni4@$1 | perl -pe 'chomp if eof;s/\n/|/'); echo $plist; ps fauxww | awk '$2~/'"$plist"'/{print $0}';}; pbip

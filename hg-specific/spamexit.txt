@@ -1,0 +1,1 @@
+find /root/spam_investigation -delete; exit

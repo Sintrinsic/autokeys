@@ -1,0 +1,1 @@
+mysql -BNe "SELECT distinct(User) FROM mysql.user WHERE length(Password) <= 16"

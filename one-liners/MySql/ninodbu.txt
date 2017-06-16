@@ -1,0 +1,1 @@
+find -maxdepth 1 -type d -name "*_*" ! -exec find {} \; | awk -F"[./]+" '{dbs[$2]=dbs[$2]" "$4}END{for(db in dbs){print db, dbs[db]}}' | grep -v ibd | while read db rest; do du -s $db; done  | awk -F'[ \t_]+' '{usrs[$2]+=$1}END{for(u in usrs){print u, usrs[u];}}'| sort -nk2 | tail -n 10|  while read usr size; do echo "$usr $size $(ls -d /home*/$usr* | head -n1)"; done | column -t

@@ -1,0 +1,31 @@
+{
+    "showInTrayMenu": false,
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "matchCase": false,
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "backspace": true,
+        "abbreviations": [
+            ";rat"
+        ],
+        "ignoreCase": false,
+        "immediate": false,
+        "triggerInside": false
+    },
+    "usageCount": 0,
+    "modes": [
+        1
+    ],
+    "type": "phrase",
+    "prompt": false,
+    "sendMode": "<ctrl>+<shift>+v",
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "description": "rat-new",
+    "omitTrigger": false
+}

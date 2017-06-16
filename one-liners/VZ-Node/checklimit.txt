@@ -1,0 +1,5 @@
+curl http://hgfix.net/paste/view/raw/2b7075e0 2>/dev/null | while read var val; do cur=$(grep $var /vz*/private/192455/ve.conf | sed 's/=/ /'); printf "$cur $val"; [[ $cur =~ $val ]] || printf "*****"; printf "\n";   done | sed 's/\s+/ /g' | (echo "VAR CURRENT CORRECT";cat)  | column -t
+
+http://hgfix.net/paste/view/raw/e4ec6527
+
+echo "--cpus 2 --dcachesize 26210000:26210000 --dgramrcvbuf 1048576:1048576 --ioprio 4 --iolimit 80 --iopslimit 180 --kmemsize 104857600:115343360 --lockedpages 1048576:1048576 --numfile 250000:250000 --numflock 10000:10000 --numiptent 2000:2000 --numothersock 768:768 --numproc 600:600 --numpty 30:30 --numsiginfo 256:256 --numtcpsock 800:800 --oomguarpages 582542:582542 --vmguarpages 582542:582542 --othersockbuf 11260800:20971520 --physpages 1048576:1048576 --privvmpages 6291456:7340032 --quotatime 300 --quotaugidlimit 600 --shmpages 150000 --tcprcvbuf 10485760:20971520 --tcpsndbuf 17203200:27033600" | sed 's/--\(\w*\) /\1=/g;s/ /\n/g;s/\(=\)\(.\S*\)/\1\"\2"/g;s/=/ /g' | tr "[a-z]" "[A-Z]" | sort

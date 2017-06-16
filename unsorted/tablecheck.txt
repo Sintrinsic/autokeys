@@ -1,0 +1,1 @@
+chkdb(){ ls /var/lib/mysql/$1/ | sed 's/\..*//' | uniq | grep -v "^db$" | grep -v "^$" | while read line; do echo "$line --------------"; mysql -e "select * from africanu_magento.$line limit 1;" 1>/dev/null; done; }; chkdb 

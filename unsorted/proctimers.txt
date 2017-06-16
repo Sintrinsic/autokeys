@@ -1,0 +1,2 @@
+echo "" > proclist; pid=$$;proc=0;declare -a uprocs; trap "cat proclist | column -t;break;break;kill -9 "$pid SIGINT;  user=`pwd |cut -d"/" -f3` ;while true; do procs=$(ps ufh -u $user); while read line; do proc=$(echo $line | cut -d" " -f2); script=$proc" "$(echo $line | awk '{print $3, $12}') ; if ! [[ ${uprocs[$proc]#} ]]; then uprocs[$proc]=$script; ( echo ${uprocs[$proc]}" "$(/usr/bin/time -f "%e" strace -p $proc 2>&1 | tail -n1)  >> proclist &)2>/dev/null; fi; done <<< $procs; done 
+

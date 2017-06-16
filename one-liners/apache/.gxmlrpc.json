@@ -1,0 +1,31 @@
+{
+    "matchCase": false,
+    "showInTrayMenu": false,
+    "prompt": false,
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "usageCount": 0,
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "abbreviations": [
+            ";gxmlrpc"
+        ],
+        "backspace": true,
+        "immediate": false,
+        "ignoreCase": false,
+        "triggerInside": false
+    },
+    "modes": [
+        1
+    ],
+    "sendMode": "<ctrl>+<shift>+v",
+    "type": "phrase",
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "description": "gxmlrpc",
+    "omitTrigger": false
+}

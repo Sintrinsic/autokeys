@@ -1,0 +1,1 @@
+grep -B10 "$(pwd)$" /usr/local/apache/conf/httpd.conf | grep -PB1 '(?<=ServerName ).*' | grep -oP "(?<=VirtualHost )[0-9\.]*"

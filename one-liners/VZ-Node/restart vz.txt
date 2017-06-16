@@ -1,0 +1,1 @@
+service pvaagentd restart;service pvapp restart; vzctl exec 2 "service pvacc restart"; vzctl exec 2 "service pvamnd restart"

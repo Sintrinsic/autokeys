@@ -1,0 +1,1 @@
+ tail -f /usr/local/apache/logs/error_log | grep -i sec | grep -oP '(?<=client )[0-9\.]*' | head -n 20 | sort | uniq -c | sort -n

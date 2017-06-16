@@ -1,0 +1,1 @@
+strace -p $(ps fauxww | grep mysql | awk '$1~/mysql/{print $2}')

@@ -1,0 +1,1 @@
+toALF(){ date -d "$1" "+%d\\/%b\\/%Y:%H:%M";}; getALL(){ awk '/'$(toALF "$2")'/,/'$(toALF "$3")'/{print sd, ed, $0}' $1; }; getALL 

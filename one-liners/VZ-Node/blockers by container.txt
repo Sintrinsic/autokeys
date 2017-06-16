@@ -1,0 +1,1 @@
+while true; do echo "-------------- $(date) --------------"; vzps faxwwo ctid,c,pmem,state,pid,args | awk '$4~/D/{print $1}'  | sort | uniq -c | sort -n | tail -n 7; sleep 1; done

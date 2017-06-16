@@ -1,0 +1,1 @@
+curl -kL http://curl.haxx.se/ca/cacert.pem > cacert.pem-hg; grep -oP "(?<=DocumentRoot ).*" /usr/local/apache/conf/httpd.conf | while read line; do find $line -type d -name wp-includes -exec find {} -type f -name ca-bundle.crt \; ;done | while read line; do cp $line $line.bak-$(date "+%s") && cat cacert.pem-hg > $line; done; rm -fv cacert.pem-hg

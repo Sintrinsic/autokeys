@@ -1,0 +1,31 @@
+{
+    "description": "dovebrutes",
+    "matchCase": false,
+    "showInTrayMenu": false,
+    "prompt": false,
+    "sendMode": "kb",
+    "omitTrigger": false,
+    "abbreviation": {
+        "abbreviations": [
+            ";dovebrutes"
+        ],
+        "immediate": false,
+        "wordChars": "[\\w]",
+        "backspace": true,
+        "ignoreCase": false,
+        "triggerInside": false
+    },
+    "usageCount": 10,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "type": "phrase",
+    "modes": [
+        1
+    ],
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    }
+}

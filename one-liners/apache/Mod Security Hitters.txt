@@ -1,0 +1,1 @@
+tail -n 100000 /usr/local/apache/logs/error_log | awk -F'[][ ]+' '/Access denied/{ips[$9]+=1}END{for(ip in ips){if(ips[ip]>50){print ip}}}' | sort

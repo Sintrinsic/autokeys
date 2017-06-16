@@ -1,0 +1,1 @@
+function suptime(){ orig=$(ps -p $(ps fauxww | grep -i $1 | awk '!/\\/{print $2}') -o etime= ); ut=$(echo $orig | sed 's/-/ days -/;s/:/ hours -/;s/:/ minutes -/;s/.$/ seconds /')" ago"; printf "$1 up since:\n-$ut\n";printf "$1 last restarted:\n$(date --date="-$ut" "+%m/%d %H:%M")\n\n" ;}; suptime httpd; suptime mysql; suptime named; suptime exim; suptime dovecot

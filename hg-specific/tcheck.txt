@@ -1,0 +1,1 @@
+rcheck(){ darg="$@"; month=$(date --date="$darg" "+%b"); date=$(date --date="$darg" "+%d/%b/%Y:%H"); find /home{,1}/apachelogs/$(pwd | cut -d"/" -f3) $(pwd | cut -d"/" -f-3)/access-logs/ $(pwd | cut -d"/" -f-3)/logs -type f -regextype posix-extended -regex "(.*$month.*gz$|.*[^g][^z]$)" -exec zgrep -hB1000 "$date" {} \; |  curdom ;}; rcheck 

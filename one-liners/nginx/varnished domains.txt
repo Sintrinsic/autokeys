@@ -1,0 +1,1 @@
+ngrep -q '' -d any -W byline -n 500 dst $(iptables -nL | grep -i varnish | awk '{printf $4" "}'| sed 's/ / or /') | grep -oP "(?<=Host: ).*" | sort | uniq -c | sort -n

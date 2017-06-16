@@ -1,0 +1,1 @@
+rat(){ pwd | awk -vfn=$1 'BEGIN{RS="/";print "/";} /./{cur=cur"/"$1; print cur;}END{print cur"/"fn}'| while read line; do echo "$(stat --format='%A %U %G' $line)    $(lsattr -d $line 2>/dev/null)"; done | column -t;}; rat

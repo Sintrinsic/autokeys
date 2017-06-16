@@ -1,0 +1,31 @@
+{
+    "showInTrayMenu": false,
+    "matchCase": false,
+    "description": "allsar",
+    "prompt": false,
+    "abbreviation": {
+        "backspace": true,
+        "ignoreCase": false,
+        "abbreviations": [
+            ";allsar"
+        ],
+        "immediate": true,
+        "wordChars": "[\\w]",
+        "triggerInside": false
+    },
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "usageCount": 1,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "type": "phrase",
+    "modes": [
+        1
+    ],
+    "sendMode": "<ctrl>+<shift>+v",
+    "omitTrigger": false
+}

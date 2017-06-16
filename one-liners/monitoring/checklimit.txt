@@ -1,0 +1,2 @@
+echo "MySql is "$([[ $(user=$(pwd|cut -d \/ -f3); sqltool $user | awk '$6==1') ]] && echo "limited" || echo "not limited";); cat /dev/shm/limit/$(id -u $(pwd | cut -d"/" -f3)) 2>/dev/null|| echo "CPU is not limited";  grep -oP ".*(?=: "$(echo $PWD|cut -d'/' -f3)")" /etc/userdomains | while read line; do [[ $(ls -lah /etc/proxy_conf/$line) ]] && echo $line' cached!';done | column -t
+

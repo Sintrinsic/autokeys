@@ -1,0 +1,1 @@
+base=${PWD##/home/}; user=${base%%/*}; while true;do lsof -u $user|grep '/tmp/'|awk '{print $2}'|while read pid; do ps --no-headers -Lp $pid -o args;lsof -u $user|grep '/tmp/';done;done 

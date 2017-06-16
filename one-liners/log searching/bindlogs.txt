@@ -1,0 +1,1 @@
+grep -iP '(named|bind)' /var/log/messages | grep -vP "(query|update|notify|zone|renamed)"

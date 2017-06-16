@@ -1,0 +1,31 @@
+{
+    "abbreviation": {
+        "immediate": false,
+        "triggerInside": false,
+        "wordChars": "[\\w]",
+        "ignoreCase": false,
+        "abbreviations": [
+            ";vzfaults"
+        ],
+        "backspace": true
+    },
+    "sendMode": "kb",
+    "matchCase": false,
+    "modes": [
+        1
+    ],
+    "usageCount": 0,
+    "description": "vzfaults",
+    "type": "phrase",
+    "prompt": false,
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "omitTrigger": false,
+    "showInTrayMenu": false,
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    }
+}

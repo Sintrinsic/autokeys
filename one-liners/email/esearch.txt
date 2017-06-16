@@ -1,0 +1,1 @@
+function esearch(){ grep $1 /var/log/exim_mainlog | grep -P "<=\s\S*"$2; }; esearch 

@@ -1,0 +1,1 @@
+printf '[hgmonitoring]\nname=hgmonitoring\nbaseurl=http://repo.websitewelcome.com/monitoring/centos/$releasever/$basearch\nenabled=1\ngpgcheck=0\n' >/etc/yum.repos.d/hgmonitoring.repo; yum clean all; yum list all ; yum install -y montool montool-plugins.noarch hgmonitoring-scripts.noarch ; 

@@ -1,0 +1,1 @@
+function snapips(){ sys-snap -a $1 $2 | grep -A1 "/php" | grep -oP "(?<=REMOTE_ADDR=)[0-9\.]*" | sort | uniq -c | sort -n ;}; snapips

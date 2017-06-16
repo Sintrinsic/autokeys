@@ -1,0 +1,2 @@
+while true; do echo "CTID     B";r1=$(grep flush /proc/bc/iostat | awk '{print $2,$9+$10}');sleep 5; r2=$(grep flush /proc/bc/iostat | awk '{print $2,$9+$10}'); echo "$r2
+$r1" | awk 'BEGIN{vals['TTL']=0}{if(vals[$1]>0){print $1,(vals[$1]-$2)}else{vals[$1]=$2}}' | sort -nk2 | tail -n 10 | column -t ; done

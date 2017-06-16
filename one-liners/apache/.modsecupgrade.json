@@ -1,0 +1,31 @@
+{
+    "showInTrayMenu": false,
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "sendMode": "<ctrl>+<shift>+v",
+    "matchCase": false,
+    "type": "phrase",
+    "prompt": false,
+    "modes": [
+        1
+    ],
+    "usageCount": 0,
+    "omitTrigger": false,
+    "abbreviation": {
+        "backspace": true,
+        "triggerInside": false,
+        "immediate": false,
+        "abbreviations": [
+            ";modsecupgrade"
+        ],
+        "ignoreCase": false,
+        "wordChars": "[\\w]"
+    },
+    "description": "modsecupgrade"
+}

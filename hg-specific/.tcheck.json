@@ -1,0 +1,31 @@
+{
+    "showInTrayMenu": false,
+    "modes": [
+        1
+    ],
+    "prompt": false,
+    "description": "tcheck",
+    "usageCount": 13,
+    "matchCase": false,
+    "abbreviation": {
+        "immediate": false,
+        "backspace": true,
+        "triggerInside": false,
+        "wordChars": "[\\w]",
+        "ignoreCase": false,
+        "abbreviations": [
+            ";tcheck"
+        ]
+    },
+    "sendMode": "kb",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "omitTrigger": false,
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "type": "phrase"
+}

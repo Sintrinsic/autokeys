@@ -1,0 +1,31 @@
+{
+    "matchCase": false,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "showInTrayMenu": false,
+    "type": "phrase",
+    "prompt": false,
+    "description": "wpbrute",
+    "omitTrigger": false,
+    "abbreviation": {
+        "immediate": false,
+        "triggerInside": false,
+        "wordChars": "[\\w]",
+        "ignoreCase": false,
+        "abbreviations": [
+            ";wpbrute "
+        ],
+        "backspace": true
+    },
+    "modes": [
+        1
+    ],
+    "usageCount": 0,
+    "sendMode": "kb",
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    }
+}

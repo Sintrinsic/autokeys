@@ -1,0 +1,1 @@
+ls -la | awk '{usrs[$3]+=$5}END{for(usr in usrs){print usrs[usr],usr}}' | sort -n | tail -n10

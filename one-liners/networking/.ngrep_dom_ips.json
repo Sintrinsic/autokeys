@@ -1,0 +1,31 @@
+{
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "backspace": true,
+        "triggerInside": false,
+        "abbreviations": [
+            ";ngrepdomips"
+        ],
+        "immediate": false,
+        "ignoreCase": false
+    },
+    "usageCount": 0,
+    "prompt": false,
+    "omitTrigger": false,
+    "showInTrayMenu": false,
+    "matchCase": false,
+    "type": "phrase",
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "modes": [
+        1
+    ],
+    "description": "ngrep_dom_ips",
+    "sendMode": "<ctrl>+<shift>+v"
+}

@@ -1,0 +1,1 @@
+gpubkey(){ echo "-----BEGIN PUBLIC KEY-----";fold -b64 <(dig +short txt default._domainkey.$1 | grep -oP "(?<=p=).*(?=\\\;)" | sed 's/" "//g'); echo "-----END PUBLIC KEY-----";}; testdkim(){ pkey=$(gpubkey $1);  echo "DKIM works" | openssl rsautl -encrypt -pubin -inkey <(echo "$pkey") | openssl rsautl -decrypt -inkey /var/cpanel/domain_keys/private/$1;}; testdkim 

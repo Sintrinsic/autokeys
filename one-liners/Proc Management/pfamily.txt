@@ -1,0 +1,1 @@
+pfamily(){ echo $1; found=$(pgrep -P $1); [[ $found ]] && for i in $found; do prtree $i;done | grep -v "^$" |sort |uniq;}; pfamily

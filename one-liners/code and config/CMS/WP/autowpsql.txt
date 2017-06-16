@@ -1,0 +1,1 @@
+autowpsql(){ $(grep -oP "DB_(NAME|USER|PASSWORD)[', ]*\S*" wp-config.php | sort -r | awk -F"['\"]" '{printf $3" "}END{printf "\n"}' | while read user pass db; do echo mysql -u $user --password=$pass $db; done); }; autowpsql 

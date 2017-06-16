@@ -1,0 +1,29 @@
+{
+    "sendMode": "kb",
+    "usageCount": 0,
+    "prompt": false,
+    "matchCase": false,
+    "modes": [],
+    "type": "phrase",
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "abbreviation": {
+        "backspace": true,
+        "triggerInside": false,
+        "abbreviations": [
+            ";5dp"
+        ],
+        "ignoreCase": false,
+        "wordChars": "[\\w]",
+        "immediate": false
+    },
+    "description": "5d peaks",
+    "showInTrayMenu": false,
+    "omitTrigger": false,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    }
+}

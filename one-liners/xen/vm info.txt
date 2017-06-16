@@ -1,0 +1,1 @@
+find /backup/vm* -maxdepth 0 -type d -exec basename {} \; | while read id; do echo "$id $(awk -F"'" '/hostname/{print $2}' /home/xen/$id/$id.cfg) $(grep -oP "(?<=ip=)[0-9\. ]*" /home/xen/$id/$id.cfg )"; done | column -t;

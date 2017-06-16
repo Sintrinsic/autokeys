@@ -1,0 +1,1 @@
+vzlist -a | awk '$3=="suspended"{print $1}' | while read ctid; do tail -n 1000 /opt/hgvps/cooldown.log | grep $ctid | tail -n1 ; done

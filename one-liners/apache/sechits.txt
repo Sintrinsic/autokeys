@@ -1,0 +1,1 @@
+function sechits(){ grep $1 /usr/local/apache/logs/error_log |  grep -oP "(?<=\[id \").*?(?=\"\])" | sort | uniq -c | sort -n; }; sechits 

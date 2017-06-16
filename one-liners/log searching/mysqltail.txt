@@ -1,0 +1,1 @@
+tail -n 1000 $(grep -oP "(?<=log-error=\").*(?=\")" /etc/my.cnf)

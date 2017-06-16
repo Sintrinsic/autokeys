@@ -1,0 +1,1 @@
+ cd /var/spool/abrt; find . -maxdepth 1 -name "ccpp*" -exec awk 'FNR==1 && NR!=1 {printf " - "}{printf $0}' {}/cmdline  {}/reason \; -exec echo \; | grep -v "^$" | sort | uniq -c | sort -n

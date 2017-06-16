@@ -1,0 +1,1 @@
+ls -l /|grep '^d'|awk '{print $NF}'|while read ; do (echo -e "\n$REPLY";df -P /$REPLY)|xargs;done|awk '{if ($NF == "/") print $1}'|while read x;do du -sh $x;done 

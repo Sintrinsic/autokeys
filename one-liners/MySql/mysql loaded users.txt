@@ -1,0 +1,1 @@
+pgrep mysql| while read pid; do lsof -p $pid; done  | awk '$NF~/\//&&$NF!~/^\/(usr|lib64|opt|dev|SYS)/{print $NF}' | grep -oP "((?<=/var/lib/mysql/)\w+|(?<=/home./)\w+)"| cut -d_ -f1 | sort | uniq -c | sort -n | tail

@@ -1,0 +1,1 @@
+indent(){ perl -pe "s/^/' ' x ($1 * 3) /e"; }; dnsinfo() { for domain in $@; do echo "$domain: $(dig +short $domain)"; echo "MX:"| indent 1; dig +short mx pwns.me | while read priority host; do echo "$priority $host :: $(dig +short $host)"; done | column -t | indent 2 ; echo; done;}; dnsinfo

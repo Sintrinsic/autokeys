@@ -1,0 +1,1 @@
+sshbruteips(){ ad=$(echo "$@" | sed 's/ /\\s\*/g'); echo "$ad";  grep "$ad" /var/log/secure | grep -i failed | grep -oP "(?<=from )[0-9\.]*" | sort | uniq -c | sort -n; }; sshbruteips 

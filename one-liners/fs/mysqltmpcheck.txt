@@ -1,0 +1,1 @@
+while true; do df -h | grep mysqltmp | egrep '...%' ;mysqladmin pr | grep -i "tmp\|sort" ; sleep 1 ;done 

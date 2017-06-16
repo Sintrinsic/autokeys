@@ -1,0 +1,1 @@
+grep -A3 "$(dig +short $(uname -n)):443" /usr/local/apache/conf/httpd.conf | grep -oP "(?<=ServerName ).*" 

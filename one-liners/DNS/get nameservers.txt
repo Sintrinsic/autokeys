@@ -1,0 +1,1 @@
+ls /var/named/ | awk -F".db" '/^ns/&&(/websitewelcome/||/hostgator.com/){print $1}' | sort -n

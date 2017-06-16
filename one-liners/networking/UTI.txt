@@ -1,0 +1,1 @@
+mip=$(echo $SSH_CLIENT | cut -d" " -f1); ngrep -q '' -d any -W byline  "! src $mip and ! dst $mip" | grep -P "^(U|T|I)" 

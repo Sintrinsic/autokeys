@@ -1,0 +1,23 @@
+{
+    "title": "sar",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "type": "folder",
+    "usageCount": 0,
+    "showInTrayMenu": false,
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "abbreviation": {
+        "immediate": false,
+        "backspace": true,
+        "abbreviations": [],
+        "ignoreCase": false,
+        "triggerInside": false,
+        "wordChars": "[\\w]"
+    },
+    "modes": []
+}

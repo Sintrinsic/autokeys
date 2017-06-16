@@ -1,0 +1,1 @@
+nginxhits(){ hitcount=500; [[ $2 ]] && hitcount=$2; ngrep -q "$1" -d any -W byline -n $hitcount dst port 80|grep -oP '(?<=T )[0-9\.]{7,15}' | sort | uniq -c | sort -n ;}; nginxhits 

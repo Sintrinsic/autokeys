@@ -1,0 +1,1 @@
+service httpd stop; while pgrep -P 1 -f /usr/local/apache/bin/httpd >/dev/null; do sleep .1; done; ipcs -s | awk '$3=="nobody"{print $1}' | sort -u| while read sem; do ipcrm sem $sem; done; service httpd start

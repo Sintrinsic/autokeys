@@ -1,0 +1,1 @@
+ bash <(GET http://git.hgfix.net/wpbrute/wpbrute.sh) && echo -e "\nIf the customer wants a custom username/password:\n\nhtpasswd -c /home/.wp-admin USERNAME\n"

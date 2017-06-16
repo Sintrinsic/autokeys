@@ -1,0 +1,1 @@
+doveadm who | sed 's/^.*@//' | awk 'BEGIN{ttl=0}{ttl=ttl+$2; usrs[$1]+=$2; print $0} END{for(usr in usrs){print usrs[usr],usr;}; print ttl,"----Total----"}' | sort -n | tail -n 10

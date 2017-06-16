@@ -1,0 +1,1 @@
+echo "----- Procs -----";ps faux | awk '$8~/^D/' | sed 's/ .*\\_/\t/'| sort | uniq -c |sort -n | tail -n 5 | cut -f-3 | column -t; echo; echo "----- Users -----"; ps faux | awk '$8~/^D/{print $1}'| sort |uniq -c | sort -n | tail -n5

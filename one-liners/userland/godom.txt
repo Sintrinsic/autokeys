@@ -1,0 +1,1 @@
+godom(){ cd $(grep -A5 " $1$" /usr/local/apache/conf/httpd.conf | grep -Po '(?<=DocumentRoot ).*');}; godom 

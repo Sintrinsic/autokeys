@@ -1,0 +1,31 @@
+{
+    "usageCount": 0,
+    "prompt": false,
+    "type": "phrase",
+    "matchCase": false,
+    "omitTrigger": false,
+    "sendMode": "kb",
+    "abbreviation": {
+        "backspace": true,
+        "ignoreCase": false,
+        "triggerInside": false,
+        "abbreviations": [
+            ";bddosblock"
+        ],
+        "wordChars": "[\\w]",
+        "immediate": false
+    },
+    "description": "bind ddos block",
+    "modes": [
+        1
+    ],
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "showInTrayMenu": false
+}

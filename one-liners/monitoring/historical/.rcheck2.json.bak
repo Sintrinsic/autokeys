@@ -1,0 +1,31 @@
+{
+    "sendMode": "kb",
+    "modes": [
+        1
+    ],
+    "description": "rcheck2",
+    "omitTrigger": false,
+    "matchCase": false,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "type": "phrase",
+    "prompt": false,
+    "showInTrayMenu": false,
+    "usageCount": 0,
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "backspace": true,
+        "abbreviations": [
+            ";rcheck2"
+        ],
+        "ignoreCase": false,
+        "immediate": false,
+        "triggerInside": false
+    }
+}

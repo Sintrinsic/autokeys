@@ -1,0 +1,1 @@
+echo "grep -P \"($(grep -oP "(?<=FAILEDBACKUP ).*" /tmp/vmchk | perl -pe 'chomp if eof;s/\n/|/'))\" /root/server_list"

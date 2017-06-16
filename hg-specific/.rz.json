@@ -1,0 +1,31 @@
+{
+    "sendMode": "kb",
+    "usageCount": 15,
+    "prompt": true,
+    "matchCase": false,
+    "modes": [
+        1
+    ],
+    "type": "phrase",
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "abbreviation": {
+        "backspace": true,
+        "triggerInside": false,
+        "abbreviations": [
+            ";rz"
+        ],
+        "ignoreCase": false,
+        "wordChars": "[\\w]",
+        "immediate": false
+    },
+    "description": "rz",
+    "showInTrayMenu": true,
+    "omitTrigger": false,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    }
+}

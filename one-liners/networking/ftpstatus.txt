@@ -1,0 +1,1 @@
+cons=$(ss -on | grep ":21\s" | awk '{print $6}' | cut -d: -f1 |sort ); echo "$cons" | uniq -c | sort -n | tail -n5; echo "Total: $(echo "$cons" | wc -l)"

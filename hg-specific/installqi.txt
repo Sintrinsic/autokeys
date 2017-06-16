@@ -1,0 +1,1 @@
+rpm -e --nodeps quickinstall ; yum clean all ; yum -y install quickinstall

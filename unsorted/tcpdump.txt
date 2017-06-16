@@ -1,0 +1,1 @@
+tcpdump -pnne -i any 'ip[2:2] > 0x50' and 'tcp[13] & 2 !=0' and 'tcp[14:2] == 0xffff' and 'tcp[20:4] == 0x020405b4' and 'tcp[24:4] == 0x01010402'& tcpdump -pnne -i any 'udp[10:4] == 0x01200001' and 'udp[14:4] == 0x00000000' and 'udp[19] == 0x0001' and 'ip[((ip[2:2]) - 14):1] = 0x01' 

@@ -1,0 +1,1 @@
+cpcz() { named-checkzone ${1?No domain specified.} /var/named/${1?No domain specified.}.db; } ; cpcz

@@ -1,0 +1,31 @@
+{
+    "matchCase": false,
+    "omitTrigger": false,
+    "modes": [
+        1
+    ],
+    "showInTrayMenu": false,
+    "type": "phrase",
+    "description": "reloadnginx",
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "sendMode": "<ctrl>+<shift>+v",
+    "usageCount": 0,
+    "abbreviation": {
+        "abbreviations": [
+            ";nginxreload"
+        ],
+        "triggerInside": false,
+        "wordChars": "[\\w]",
+        "backspace": true,
+        "ignoreCase": false,
+        "immediate": false
+    },
+    "prompt": false
+}

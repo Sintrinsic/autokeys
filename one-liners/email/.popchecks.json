@@ -1,0 +1,31 @@
+{
+    "omitTrigger": false,
+    "matchCase": false,
+    "modes": [
+        1
+    ],
+    "sendMode": "<ctrl>+<shift>+v",
+    "prompt": false,
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "description": "popchecks",
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "showInTrayMenu": false,
+    "abbreviation": {
+        "immediate": false,
+        "ignoreCase": false,
+        "triggerInside": false,
+        "backspace": true,
+        "abbreviations": [
+            ";popchecks"
+        ],
+        "wordChars": "[\\w]"
+    },
+    "usageCount": 4,
+    "type": "phrase"
+}

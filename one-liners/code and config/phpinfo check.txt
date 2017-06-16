@@ -1,0 +1,1 @@
+curl $(grep -B10 "$(pwd)$" /usr/local/apache/conf/httpd.conf | grep -Po '(?<=ServerName ).*' | uniq)/phpinfo.php 2>/dev/null | lynx --stdin -dump

@@ -1,0 +1,1 @@
+tail -n 10000 /var/log/exim_mainlog | grep -oP "(?<=<= )\S*@\S*" | sort | uniq -c | sort -n

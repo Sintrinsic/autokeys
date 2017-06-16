@@ -1,0 +1,1 @@
+ips=$(ss -tnl src :80|awk '$2 > 0&&$1=="LISTEN"'); [[ $(printf "$ips"| wc -l) -gt 0 ]] && ( [[ $(printf "$ips" | wc -l) -gt 1 ]] && echo apache || echo attack) || echo good

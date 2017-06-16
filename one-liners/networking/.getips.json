@@ -1,0 +1,31 @@
+{
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "usageCount": 10,
+    "matchCase": false,
+    "description": "getips",
+    "modes": [
+        1
+    ],
+    "abbreviation": {
+        "backspace": true,
+        "abbreviations": [
+            ";getips"
+        ],
+        "ignoreCase": false,
+        "triggerInside": false,
+        "immediate": false,
+        "wordChars": "[\\w]"
+    },
+    "omitTrigger": false,
+    "prompt": false,
+    "showInTrayMenu": false,
+    "type": "phrase",
+    "sendMode": "<ctrl>+<shift>+v",
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    }
+}

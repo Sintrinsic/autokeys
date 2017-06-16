@@ -1,0 +1,23 @@
+{
+    "usageCount": 0,
+    "type": "folder",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "modes": [],
+    "abbreviation": {
+        "immediate": false,
+        "abbreviations": [],
+        "ignoreCase": false,
+        "wordChars": "[\\w]",
+        "triggerInside": false,
+        "backspace": true
+    },
+    "title": "kvm",
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "showInTrayMenu": false
+}

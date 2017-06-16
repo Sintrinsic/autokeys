@@ -1,0 +1,23 @@
+{
+    "showInTrayMenu": false,
+    "modes": [],
+    "usageCount": 0,
+    "abbreviation": {
+        "immediate": false,
+        "ignoreCase": false,
+        "triggerInside": false,
+        "backspace": true,
+        "abbreviations": [],
+        "wordChars": "[\\w]"
+    },
+    "title": "sys-snap",
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "type": "folder",
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    }
+}

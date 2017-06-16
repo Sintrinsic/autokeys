@@ -1,0 +1,1 @@
+tail -200 /usr/sbin/r1soft/log/cdp.log | awk -F'[[,:]' '/backup request/{print $8}' | tail -1 

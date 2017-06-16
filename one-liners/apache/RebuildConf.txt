@@ -1,0 +1,1 @@
+/scripts/updateuserdatacache && /scripts/updateuserdomains && /scripts/rebuildhttpdconf && service httpd graceful

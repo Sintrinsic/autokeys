@@ -1,0 +1,1 @@
+strace -r -s 500 php index.php 2>&1 | awk -F'[ "]' '/plugins/{print $8}' | grep -v "^$" | sort | uniq -c | sort -n

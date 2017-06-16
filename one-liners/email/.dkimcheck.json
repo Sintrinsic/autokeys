@@ -1,0 +1,27 @@
+{
+    "type": "phrase",
+    "omitTrigger": false,
+    "usageCount": 0,
+    "sendMode": "<ctrl>+<shift>+v",
+    "modes": [],
+    "prompt": false,
+    "showInTrayMenu": false,
+    "description": "dkimcheck",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "abbreviation": {
+        "immediate": false,
+        "backspace": true,
+        "triggerInside": false,
+        "ignoreCase": false,
+        "abbreviations": [],
+        "wordChars": "[\\w]"
+    },
+    "matchCase": false,
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    }
+}

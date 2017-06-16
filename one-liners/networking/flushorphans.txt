@@ -1,0 +1,1 @@
+ mo=$(cat /proc/sys/net/ipv4/tcp_max_orphans); [[ $mo -gt 1 ]] && (echo 0 > /proc/sys/net/ipv4/tcp_max_orphans; echo $mo > /proc/sys/net/ipv4/tcp_max_orphans); netstat -pant | awk '{print $6}' | sort | uniq -c | sort -n

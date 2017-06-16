@@ -1,0 +1,1 @@
+awk -F'[]:/[]' '{print "03/"$2"/"$4" "$5":"$6":00"}' uptimeData.logs  | sort -ud | while read dstring; do echo "$(date -d "$dstring" "+%s") $dstring" ; done | awk '{stampDiff=($1-(oldStamp+60))/60; print $2,$3,stampDiff; oldStamp=$1}'

@@ -1,0 +1,1 @@
+snaporgs(){ sys-snap -a $1 $2 | grep -A1 "/php" | grep -oP "(?<=REMOTE_ADDR=)[0-9\.]*" | sort | while read line; do  whois $line | (grep -i organization || cat); done | sort | uniq -c | sort -n;}; snaporgs 

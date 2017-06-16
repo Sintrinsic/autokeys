@@ -1,0 +1,15 @@
+## Mitigating a DNS attack
+options {
+    recursion no;
+    notify no;
+    allow-query-cache { 127.0.0.1; };
+    additional-from-cache no;
+    transfer-format many-answers;
+    max-transfer-time-in 60;
+    interface-interval 0;
+    version "BIND";
+};
+
+logging {
+    category security { null; };
+};

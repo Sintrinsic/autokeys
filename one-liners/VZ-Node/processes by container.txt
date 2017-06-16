@@ -1,0 +1,1 @@
+vzps -eo ctid | sort | uniq -c |sort -n

@@ -1,0 +1,1 @@
+perl <(GET http://git.hgfix.net/pwrestrict/pwrestrict.pl)

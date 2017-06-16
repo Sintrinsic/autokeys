@@ -1,0 +1,31 @@
+{
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "usageCount": 0,
+    "type": "phrase",
+    "omitTrigger": false,
+    "showInTrayMenu": false,
+    "prompt": false,
+    "sendMode": "<ctrl>+<shift>+v",
+    "matchCase": false,
+    "abbreviation": {
+        "triggerInside": false,
+        "abbreviations": [
+            ";setscheduler"
+        ],
+        "wordChars": "[\\w]",
+        "backspace": true,
+        "immediate": false,
+        "ignoreCase": false
+    },
+    "modes": [
+        1
+    ],
+    "description": "setscheduler",
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    }
+}

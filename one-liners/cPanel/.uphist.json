@@ -1,0 +1,31 @@
+{
+    "type": "phrase",
+    "description": "uphist",
+    "matchCase": false,
+    "usageCount": 0,
+    "abbreviation": {
+        "backspace": true,
+        "triggerInside": false,
+        "immediate": false,
+        "abbreviations": [
+            ";uphist"
+        ],
+        "ignoreCase": false,
+        "wordChars": "[\\w]"
+    },
+    "modes": [
+        1
+    ],
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "omitTrigger": false,
+    "showInTrayMenu": false,
+    "sendMode": "<ctrl>+<shift>+v",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "prompt": false
+}

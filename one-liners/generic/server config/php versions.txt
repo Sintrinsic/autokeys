@@ -1,0 +1,1 @@
+php -i | grep "PHP Version"| uniq; ls /opt | grep php5

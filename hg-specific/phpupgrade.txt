@@ -1,0 +1,1 @@
+bash <(GET git.hgfix.net/install-php53/install-php53) -

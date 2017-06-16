@@ -1,0 +1,10 @@
+sed -i '/^Include .*hg_rules\.conf/d' /usr/local/apache/conf/includes/pre_main_global.conf
+sed -i '/^Include .*modsec2\.conf/d' /usr/local/apache/conf/includes/pre_main_global.conf
+sed -i '/Include .*modsecurity\.conf/s/^/#\ /g' /usr/local/apache/conf/includes/pre_main_global.conf
+sed -i 's/^\(FL [^"]*\)"/\1, \\\nid:1500001"/' /usr/local/apache/conf/modsec2.conf
+mv /opt/mod_security{,.old}
+mkdir -vp /opt/mod_security
+yum -y reinstall HG-modsecrules; wget -O /opt/mod_security/10_asl_rules.conf http://git.hgfix.net/dedimodsec/root/opt/mod_security/10_asl_rules.conf && wget -O /opt/mod_security/hg_rules.conf http://git.hgfix.net/dedimodsec/root/opt/mod_security/hg_rules.conf && wget -O /opt/mod_security/hg_whitelist.conf http://git.hgfix.net/dedimodsec/root/opt/mod_security/hg_whitelist.conf
+awk '{a++;print $0",id:"a}' /opt/mod_security.old/whitelist.conf >> /opt/mod_security/whitelist.conf
+/scripts/rebuildhttpdconf
+service httpd restart

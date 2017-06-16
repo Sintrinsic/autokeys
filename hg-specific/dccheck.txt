@@ -1,0 +1,1 @@
+grep diskclean /opt/hgmods/monitoring/logs/montool.log

@@ -1,0 +1,31 @@
+{
+    "matchCase": false,
+    "description": "whmflushfire",
+    "omitTrigger": false,
+    "showInTrayMenu": false,
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "modes": [
+        1
+    ],
+    "abbreviation": {
+        "abbreviations": [
+            ";whmflushfire"
+        ],
+        "immediate": false,
+        "ignoreCase": false,
+        "wordChars": "[\\w]",
+        "triggerInside": false,
+        "backspace": true
+    },
+    "type": "phrase",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "usageCount": 0,
+    "prompt": false,
+    "sendMode": "kb"
+}

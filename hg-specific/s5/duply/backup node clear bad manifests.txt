@@ -1,0 +1,1 @@
+find /var/log/backup_logs/ -mtime -1 -exec grep -HB10 "Finished state FAILED" {} \;  | grep "AssertionError:.*manifest" | while read path rest; do backupdir=$(echo $path | awk -F'[/.]' '{print "/backup/"$5"/"$6}'); echo $rest | grep -oP '[0-9a-zA-Z-\.]*manifest[0-9a-zA-Z-\.]*'| while read path; do echo $backupdir"/"$path; done; done | sort -u | while read file; do rm $file; done

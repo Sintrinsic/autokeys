@@ -1,0 +1,31 @@
+{
+    "prompt": false,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "description": "mysqldown",
+    "sendMode": "kb",
+    "showInTrayMenu": false,
+    "matchCase": false,
+    "modes": [
+        1
+    ],
+    "usageCount": 0,
+    "type": "phrase",
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "omitTrigger": false,
+    "abbreviation": {
+        "backspace": true,
+        "immediate": false,
+        "wordChars": "[\\w]",
+        "abbreviations": [
+            ";mysqldown"
+        ],
+        "ignoreCase": false,
+        "triggerInside": false
+    }
+}

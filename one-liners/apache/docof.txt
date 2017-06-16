@@ -1,0 +1,1 @@
+grep -B10 "$(pwd)$" /usr/local/apache/conf/httpd.conf | grep -Po '(?<=ServerName ).*' | uniq

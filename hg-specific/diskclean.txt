@@ -1,0 +1,11 @@
+screen_name="diskclean";
+if ! screen -list | grep -q $screen_name; then
+    screen -dmS $screen_name bash -c "/root/bin/montool diskclean -a -d -p 1";
+    sleep 2; 
+    tail /opt/hgmods/monitoring/logs/diskclean.log;
+    screen -list | grep -q $screen_name;
+else
+   echo "A screen with that name already exists";
+   #sleep 2;
+   #screen -R $screen_name;
+fi && exit; 

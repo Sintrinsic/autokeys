@@ -1,0 +1,2 @@
+#kill reseller
+export reseller="[RESELLER]" ; export REMOTE_USER=root ; export QUERY_STRING="verify=I%20understand%20this%20will%20irrevocably%20remove all%20the%20accounts owned by%20the%20reseller%20$reseller&reseller=$reseller&resalso=1" ; /usr/local/cpanel/whostmgr/bin/whostmgr2 killreseller

@@ -1,0 +1,1 @@
+ips=$(ss -tnl src :80|awk '$2 > 50&&$1~"LISTEN"'); cnt=$(printf "$ips"|wc -l);  [[ $cnt -gt 0 ]] && ( [[ $cnt -gt 1 ]] && echo apache || echo attack ) || echo good; echo $cnt

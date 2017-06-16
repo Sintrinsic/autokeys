@@ -1,0 +1,1 @@
+for i in $(ls -U1 /boot/initrd-*); do v=$(echo $i|sed 's/^\/boot\/initrd-//g'|sed 's/\.img$//g'); echo "$i | $(ls -U1 /boot/vmlinuz-${v} 2>/dev/null)";done|column -t

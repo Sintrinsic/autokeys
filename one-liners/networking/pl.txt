@@ -1,0 +1,1 @@
+function pl(){ out=$(lsof -nPi | grep ":$1.*LISTEN" | awk '{print $8, $9}' | sort -u); [[ $out ]] && (echo "Listening:"; echo $out) || echo "Dead";}; pl

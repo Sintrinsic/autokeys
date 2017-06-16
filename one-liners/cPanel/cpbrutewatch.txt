@@ -1,0 +1,1 @@
+function cpbrutewatch(){ while true; do echo "-------$(date)------"; /usr/bin/time --format="$1 hits in %e seconds:" ngrep -q '' -d any -W byline -n $1 dst port 2083 or port 2087  | grep -oP "(?<=T )[0-9\.]*"| sort | uniq -c | sort -n; done; }; cpbrutewatch

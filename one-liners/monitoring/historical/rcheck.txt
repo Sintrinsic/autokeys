@@ -1,0 +1,1 @@
+zgrep -hB1000 "$(date --date="$(stat -c"%z" /dev/shm/limit/$(id -u $(pwd | cut -d"/" -f3)))" "+%d/%b/%Y:%H")" /home1/apachelogs/$(pwd | cut -d"/" -f3)/* $(pwd | cut -d"/" -f-3)/access-logs/* | curdom

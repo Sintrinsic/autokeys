@@ -1,0 +1,1 @@
+cooldown() { _node=$(cat /proc/loadavg); for _ct in $@; do echo "$(date +%s),$_ct,$(vzlist -H $_ct -o ip,hostname,laverage),(due to high node load: $_node)" >> /opt/hgvps/cooldown.log; vzctl stop $_ct & echo vzctl start $_ct | at now + 7min; done; }; cooldown 

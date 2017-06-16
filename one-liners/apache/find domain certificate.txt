@@ -1,0 +1,1 @@
+findcert(){ find /usr/share/ssl/{private,certs}/ -regex ".*$1.*"; }; findcert

@@ -1,0 +1,1 @@
+while sleep .5 ;do df -h /var/mysqltmp | grep '...%' ;mysqladmin pr | grep -i "tmp\|sort" | grep $(pwd | cut -d/ -f3) ;ps h -u $(pwd | cut -d/ -f3) -o psr,pid,user,%cpu,%mem,state,wchan,command | egrep -v 'imap|pop3';done 

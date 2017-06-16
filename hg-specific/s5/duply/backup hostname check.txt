@@ -1,0 +1,1 @@
+grep -oP "(?<=FAILEDBACKUP ).*" /tmp/vmchk | while read id; do echo "$id $(awk -F"'" '/hostname/{print $2}' /home/xen/$id/$id.cfg)"; done

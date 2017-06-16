@@ -1,0 +1,1 @@
+smartctl --scan | while read path rest; do echo "========== $path ========="; smartctl -i $path; done

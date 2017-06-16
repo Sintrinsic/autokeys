@@ -1,0 +1,1 @@
+while true; do sysctl -a |  awk '/netfilter.nf_conntrack_count/{ct=$3}/net.nf_conntrack_max/{max=$3}END{print ct"/"max}'; sleep 5 ;done 

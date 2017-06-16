@@ -1,0 +1,5 @@
+RewriteEngine On
+ErrorDocument 416 "Invalid Request"
+RewriteCond %{THE_REQUEST} "^POST /xmlrpc.php"
+RewriteCond %{HTTP_USER_AGENT} !^Jetpack\ by\ WordPress\.com [NC]
+RewriteRule .* - [R=416,L]

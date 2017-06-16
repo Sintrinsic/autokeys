@@ -1,0 +1,31 @@
+{
+    "sendMode": "<ctrl>+<shift>+v",
+    "type": "phrase",
+    "abbreviation": {
+        "ignoreCase": false,
+        "immediate": false,
+        "backspace": true,
+        "wordChars": "[\\w]",
+        "abbreviations": [
+            ";saram"
+        ],
+        "triggerInside": false
+    },
+    "description": "ramstatus",
+    "usageCount": 0,
+    "prompt": false,
+    "matchCase": false,
+    "modes": [
+        1
+    ],
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "showInTrayMenu": false,
+    "omitTrigger": false,
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    }
+}

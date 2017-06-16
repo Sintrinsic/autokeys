@@ -1,0 +1,27 @@
+{
+    "matchCase": false,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "showInTrayMenu": false,
+    "type": "phrase",
+    "prompt": false,
+    "description": "suspendedusers\\",
+    "omitTrigger": false,
+    "abbreviation": {
+        "immediate": false,
+        "triggerInside": false,
+        "wordChars": "[\\w]",
+        "ignoreCase": false,
+        "abbreviations": [],
+        "backspace": true
+    },
+    "modes": [],
+    "usageCount": 0,
+    "sendMode": "<ctrl>+<shift>+v",
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    }
+}

@@ -1,0 +1,1 @@
+tail -n 10000 /var/log/maillog | gawk -F"[<>,=]" '/auth failed/||/disconnected while authenticating/{print $9}' | sort | uniq -c | sort -n | awk '$1>4{print $2}' | while read line; do iptables -I INPUT -j DROP -m comment --comment "Caught Dovecot bruting.  -bdupree $(date +%D)" -s  $line; done; ps fauxww | grep checkpass | awk '{print $2}' | while read line; do kill $line; done

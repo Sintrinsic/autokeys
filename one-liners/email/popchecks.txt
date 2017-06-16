@@ -1,0 +1,1 @@
+awk -F"[ :]" '/login/&&('$(find $(pwd | cut -d"/" -f -3)/mail/*/*/cur/ -type d | cut -d"/" -f5 | sort -u | while read line; do echo -n "/$line/"; done | sed 's&//&/||/&g')'){print $1" "$2"-"$3":00 "$15}' /var/log/maillog | sort | uniq -c | sort -n | sed 's/rip=//;s/,//' |  awk '$1>30'

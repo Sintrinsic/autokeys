@@ -1,0 +1,1 @@
+hdu=$(montool homediskusage -c 10000); montool suspendedaccounts 2>/dev/null | awk '/180 days suspended/,/90 and 180 days/{if($2~/home/){print $1}}'| while read user; do grep $user /var/cpanel/resellers &>/dev/null && (printf "\n----- $user ----\n"; oi -c $user| while read resold; do echo "$hdu" | grep $resold ; done | awk '{ttl+=$2; print $0}END{print "TOTAL: "ttl}'); done

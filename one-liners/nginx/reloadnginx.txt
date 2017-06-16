@@ -1,0 +1,1 @@
+ /opt/hgmods/proxy_cron.pl ; service nginx reload

@@ -1,0 +1,31 @@
+{
+    "modes": [
+        1
+    ],
+    "showInTrayMenu": false,
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "matchCase": false,
+    "sendMode": "kb",
+    "prompt": false,
+    "abbreviation": {
+        "backspace": true,
+        "immediate": false,
+        "triggerInside": false,
+        "abbreviations": [
+            ";tmcc"
+        ],
+        "ignoreCase": false,
+        "wordChars": "[\\w]"
+    },
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "description": "too many connections colored",
+    "usageCount": 0,
+    "type": "phrase",
+    "omitTrigger": false
+}

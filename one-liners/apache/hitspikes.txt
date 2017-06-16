@@ -1,0 +1,1 @@
+tail -n 100000 /usr/local/apache/logs/access_log  | awk -F"[ \t\\\[:]+" '{print $4":"$5":00"}' | sort | uniq -c | sort -rdk2

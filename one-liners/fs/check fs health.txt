@@ -1,0 +1,1 @@
+find /dev -maxdepth 1 -regextype posix-extended -regex ".*/([a-z]d[a-z][0-9]|md[0-9]*)" | while read part; do echo "$part $(tuneout=$(tune2fs -l $part 2>&1); echo "$tuneout" | grep -oP '(?<=state: ).*')" ; done | column -t 

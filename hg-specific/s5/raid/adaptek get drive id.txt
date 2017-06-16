@@ -1,0 +1,1 @@
+getDriveID(){ /opt/zabbix/sbin/raidcheck/bin/arcconf getconfig 1 PD | grep -C7 $1 | awk -F'(: |[,(])' '/Serial number/{print $0}/Device/{print $0; print $4,$5}' | sort -rn;};getDriveID

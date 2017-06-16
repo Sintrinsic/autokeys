@@ -1,0 +1,2 @@
+quota * | grep -P "(^Disk|sdc1)"| tr "\n" " " | sed 's/Disk /\nDisk /g' | awk '{print $5,$9}'|  sort -nk2 | tail -n 10 | column -t
+

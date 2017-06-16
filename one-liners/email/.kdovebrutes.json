@@ -1,0 +1,31 @@
+{
+    "description": "kdovebrutes",
+    "sendMode": "<ctrl>+<shift>+v",
+    "modes": [
+        1
+    ],
+    "usageCount": 7,
+    "type": "phrase",
+    "showInTrayMenu": false,
+    "omitTrigger": false,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "matchCase": false,
+    "abbreviation": {
+        "backspace": true,
+        "immediate": false,
+        "ignoreCase": false,
+        "triggerInside": false,
+        "wordChars": "[\\w]",
+        "abbreviations": [
+            ";kdovebrutes"
+        ]
+    },
+    "prompt": false,
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    }
+}

@@ -1,0 +1,1 @@
+for i in $(ls /dev/sg*); do smartctl -d sat -a $i |sed 's/([0-9, ]*)$//' | awk '/Serial/{drive["sn"]=$NF}/(Hours|Reallocated|Pending|Uncorr|power-on)/{ drive["all"]=drive["all"]"\n"$0}(/Reallocated/&&$NF>50)||(/Uncorr/&&$NF>0)||(/Pending/&&$NF>15){drive["errors"]+=1}END{if(drive["errors"]>0){print "Serial:"drive["sn"]; print drive["all"];}}' ; done 

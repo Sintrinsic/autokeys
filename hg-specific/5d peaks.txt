@@ -1,0 +1,1 @@
+m=$(date "+%m"); od=$(date --date="5 days ago" "+%d"); d=$(date "+%d"); for i in $(seq $od $d); do echo $m"/"$i" : "$(sys-snap $m/$i | sort -nk2 | tail -n1) | column -t; done

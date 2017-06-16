@@ -1,0 +1,1 @@
+service dovecot stop && (service dovecot start || ( rm -f /var/run/dovecot/auth-{login,client,userdb,master} && service dovecot start)); service exim restart 

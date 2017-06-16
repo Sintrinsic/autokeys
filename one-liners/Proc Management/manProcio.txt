@@ -1,0 +1,1 @@
+function getio(){ grep -P "^(read|write)_bytes:" /proc/*/io 2>/dev/null | awk -F"[/ ]" '{procs[$3]+=$5}END{for(p in procs){print procs[p],p}}';}; first=$(getio);sleep 2; second=$(getio); printf "$second\n$first" |  awk 'BEGIN{vals['TTL']=0}{if(vals[$2]>0){print $2,(vals[$2]-$1)}else{vals[$2]=$1}}' | sort -nk2 | tail -n 10 | column -t 

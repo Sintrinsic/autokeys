@@ -1,0 +1,1 @@
+lynx --dump --width=10000 localhost/whm-server-status| grep "GET\\|POST" | awk '{print $11,$5,$12,$14}' |column -t|sort  -nk2

@@ -1,0 +1,1 @@
+find -maxdepth 1 -type d ! -regex $(echo "\(./home$\|"$(df | awk '$NF!~/\/$/&&$NF!~/^on$/{print $NF}'| tr "\n" "\|"| sed 's/|/.*\\|\./g')"\)") -exec du -sh {} \+ 2>/dev/null | sort -h

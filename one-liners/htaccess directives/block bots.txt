@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} ^Yahoo [OR]
+RewriteCond %{HTTP_USER_AGENT} spider [OR]
+RewriteCond %{HTTP_USER_AGENT} bot [OR]
+RewriteCond %{HTTP_USER_AGENT} crawl 
+RewriteRule .* - [F]

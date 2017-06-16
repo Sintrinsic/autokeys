@@ -1,0 +1,31 @@
+{
+    "prompt": false,
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "omitTrigger": false,
+    "sendMode": "kb",
+    "description": "problem content",
+    "modes": [
+        1
+    ],
+    "matchCase": false,
+    "usageCount": 0,
+    "abbreviation": {
+        "triggerInside": false,
+        "ignoreCase": false,
+        "immediate": false,
+        "wordChars": "[\\w]",
+        "abbreviations": [
+            ";pcontent"
+        ],
+        "backspace": true
+    },
+    "showInTrayMenu": false,
+    "type": "phrase"
+}

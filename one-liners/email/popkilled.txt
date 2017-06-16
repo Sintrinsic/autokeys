@@ -1,0 +1,1 @@
+popkilled(){ grep $1 /var/log/maillog | awk -F'[ \t)(]+' '/pop3/&&/del=[1-9]/{print $1,$2,$3,$7,$14}' | while read mon day hrs address qnt ; do echo "$(date +"%m/%d/%Y %H:%M:%S" --date="$mon $day $hrs") $address $(echo $qnt | grep -oP '(?<=del=)[0-9]*')"; done | sed '1i/DATE TIME ADDRESS DELETED' | column -t;}; popkilled

@@ -1,0 +1,1 @@
+awk '/Failed/ {print $11}' /var/log/secure | sort | uniq -c | sort -rn | head

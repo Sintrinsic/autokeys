@@ -1,0 +1,1 @@
+function fuser(){ grep -i $1 /etc/passwd /etc/userdomains /etc/trueuserowners /etc/trueuserdomains /var/cpanel/userdata/ /var/cpanel/databases/users.db; ls /var/cpanel/users/ | grep -i $1; }; fuser 

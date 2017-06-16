@@ -1,0 +1,1 @@
+lsof | sort -nk7 | grep deleted | awk '{pids[$2]+=$7}END{for(p in pids){ print p,pids[p]}}' | sort -nk2 | tail -n 10 | while read pid ttl; do echo "$ttl $pid $(ps --no-header -o user,args -p $pid|awk '{print $1,$2}') "; done | ( echo "SIZE PID USER BIN"; cat ) | column -t

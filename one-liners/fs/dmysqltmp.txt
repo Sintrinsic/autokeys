@@ -1,0 +1,1 @@
+sed 's/\(\/var\/mysqltmp tmpfs.*size=\)4096m/\18192m/' /etc/fstab; mount -o remount /var/mysqltmp

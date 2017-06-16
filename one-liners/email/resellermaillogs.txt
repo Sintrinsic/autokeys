@@ -1,0 +1,1 @@
+function allresellerlogs(){ doms=$(oi -d $1 | tr "\n" "|"|sed 's/\./\\./g'); exigrep -P "("${doms::${#doms}-1}")" /var/log/exim_mainlog.1.gz;}; allresellerlogs

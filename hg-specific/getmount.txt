@@ -1,0 +1,1 @@
+getmount(){ ll /etc/vz/conf/$(vzlist -a | grep $1 | awk '{print $1}').conf | awk '{print $NF}';}; getmount

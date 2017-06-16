@@ -1,0 +1,31 @@
+{
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "omitTrigger": false,
+    "modes": [
+        1
+    ],
+    "type": "phrase",
+    "description": "cpubuot2",
+    "matchCase": false,
+    "sendMode": "<ctrl>+<shift>+v",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "abbreviations": [
+            ";cpubuot2"
+        ],
+        "backspace": true,
+        "immediate": false,
+        "ignoreCase": false,
+        "triggerInside": false
+    },
+    "prompt": false,
+    "showInTrayMenu": false,
+    "usageCount": 1
+}

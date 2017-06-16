@@ -1,0 +1,1 @@
+function nginxerrors() { zgrep $1 /var/log/nginx/* | cut -d":" -f2 | sed 's/\(.*\)/\1:00/' | sort | uniq -c | sort -k2d -k3d;  }; nginxerrors

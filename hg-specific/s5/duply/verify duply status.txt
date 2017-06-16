@@ -1,0 +1,1 @@
+find /backup/vm* -maxdepth 0 -type d -exec basename {} \; | while read line; do echo "$line $(duply $line status 2>&1 | grep -iP "chain end time|does not resolve" | tail -n 1)"; done

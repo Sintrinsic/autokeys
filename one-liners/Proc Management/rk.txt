@@ -1,0 +1,1 @@
+rk(){ for usr in $(oi -c $1); do  killall -6 -u $usr; mysql -e "show full processlist" | awk -F"\t" '/'${usr:0:8}'/{print "KILL "$1";"}' | mysql ; done; }; rk

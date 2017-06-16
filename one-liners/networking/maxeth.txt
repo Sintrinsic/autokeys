@@ -1,0 +1,1 @@
+sar -n DEV | awk 'BEGIN{max=0} $1~/Average:/{if($3>max){max=$3; out=$2};print $0} END{print out}'

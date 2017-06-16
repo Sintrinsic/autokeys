@@ -1,0 +1,1 @@
+function vcheck(){ echo "curl $(montool suspendedaccounts 2>/dev/null | awk '$2~/home'$1'/&&$3~/[MG]$/{print $3,$4,$2,$1,$7}' |  sort -rh | head -n 30| column -t | hpaste | sed 's&view/&view/raw/&') 2>/dev/null | python check.py $(hostname)";}; vcheck

@@ -1,0 +1,1 @@
+t() { /sbin/iptables -I INPUT -p tcp -s $1 --syn --dport $2 -m connlimit --connlimit-above 2 -j REJECT --reject-with tcp-reset ;}; t 

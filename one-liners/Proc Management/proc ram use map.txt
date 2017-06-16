@@ -1,0 +1,1 @@
+prusemap(){ addr=$(pmap -x $1 | sort -nk2 | tail -n1 | awk '{print $1}' | sed 's/0*//'); grep -A15 $addr /proc/$1/smaps; }; prusemap

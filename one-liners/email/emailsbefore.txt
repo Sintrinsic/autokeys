@@ -1,0 +1,1 @@
+function oldMail(){ find -name "*,S\=*" ! -newermt $(date --date=$1" days ago" "+%m/%d/%y") ;}; oldMail

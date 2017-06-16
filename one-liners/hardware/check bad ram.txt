@@ -1,0 +1,1 @@
+ for i in $(ls -U1 /sys/devices/system/edac/mc/mc*/csrow*/ch*_ce_count);do echo "$i : $(cat $i)";done

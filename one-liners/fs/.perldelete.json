@@ -1,0 +1,31 @@
+{
+    "usageCount": 0,
+    "sendMode": "<ctrl>+<shift>+v",
+    "showInTrayMenu": false,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "omitTrigger": false,
+    "matchCase": false,
+    "description": "perldelete",
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "abbreviation": {
+        "abbreviations": [
+            ";pdel"
+        ],
+        "backspace": true,
+        "wordChars": "[\\w]",
+        "ignoreCase": false,
+        "immediate": false,
+        "triggerInside": false
+    },
+    "type": "phrase",
+    "prompt": false,
+    "modes": [
+        1
+    ]
+}

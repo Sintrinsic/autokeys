@@ -1,0 +1,2 @@
+while true ;do echo "----------- $(date) ---- ($(uptime| sed 's/.*average: //')) ----------"| awk -F"[(,]" '$2>100||$3>100{printf "\033[1;31m"}{print $0,"\033[0m"}'; vzlist -o veid,ctid,hostname,ip,laverage | sort -nk5  | tail -n5; sleep 5; done 
+

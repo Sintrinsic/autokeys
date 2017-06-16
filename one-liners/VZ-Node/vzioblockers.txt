@@ -1,0 +1,1 @@
+while true; do echo "----- $(date) -----";vzps faxwwo ctid,stat | grep "D.*$" | awk '{print $1'} | sort | uniq -c | sort -n | tail -n 5; sleep 1; done

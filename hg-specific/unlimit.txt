@@ -1,0 +1,1 @@
+luid=$(awk -vuser=$(pwd | cut -d"/" -f3) -F: '$1==user{print $3}'  /etc/passwd); stat /dev/shm/limit/$luid; ls /dev/shm/limit/$luid && rm -f /dev/shm/limit/$luid ;  /opt/hgmods/proxy_cron.pl ; service nginx reload 

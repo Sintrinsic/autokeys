@@ -1,0 +1,2 @@
+echo; echo; hostname; date; echo; echo "{code}"; GET git.hgfix.net/sas/pmapgrab|bash; echo "{code}"; echo 
+

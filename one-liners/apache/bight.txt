@@ -1,0 +1,2 @@
+httproc=$(ps fauxww | grep httpd | grep -v '\\' | awk '{print $2}'); strace -s2000 -fp $httproc 2>&1 | grep -oP '(?<=open\(").*htaccess' | while read line; do grep -v "^#" $line 2>/dev/null| wc -l  | awk -v p=$line '$1>100{print $1, p}'; done 
+

@@ -1,0 +1,1 @@
+iptables -I INPUT -p tcp --dport 80 -m string --algo bm --string "polygon" -j DROP &&  iptables -I INPUT -p tcp --dport 80 -m string --algo bm --string "Super User" -j DROP && iptables -I INPUT -p tcp --dport 80 -m string --algo bm --string "information_schema.tables" -j DROP

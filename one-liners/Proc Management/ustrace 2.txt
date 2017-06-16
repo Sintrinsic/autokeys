@@ -1,0 +1,1 @@
+strace -fffs2000 -p $(while true; do ps fauxwwe | awk '$1=="'$(stat -c '%U' ./)'"&&/173.227.74.5/{print $2; exit 1; }' || break ; done) 2>&1 | tee strace.out

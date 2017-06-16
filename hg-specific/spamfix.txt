@@ -1,0 +1,1 @@
+montool spam killuser $(stat -c %U .);  ui; echo "ec output: $(cat /root/spam_investigation/$(stat -c %U .).ec | hpaste;)"; 

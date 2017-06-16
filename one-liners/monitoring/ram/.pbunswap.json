@@ -1,0 +1,31 @@
+{
+    "type": "phrase",
+    "omitTrigger": false,
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "abbreviation": {
+        "backspace": true,
+        "abbreviations": [
+            ";pbunswap"
+        ],
+        "immediate": false,
+        "ignoreCase": false,
+        "triggerInside": false,
+        "wordChars": "[\\w]"
+    },
+    "description": "pbunswap",
+    "matchCase": false,
+    "sendMode": "<ctrl>+<shift>+v",
+    "modes": [
+        1
+    ],
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "usageCount": 1,
+    "prompt": true,
+    "showInTrayMenu": false
+}

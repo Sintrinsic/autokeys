@@ -1,0 +1,1 @@
+hitsInHour(){ find /home*/*/access-logs/ -type f -regextype posix-extended ! -regex ".*(ftp|ssl).*" | while read log; do echo "$(grep "$(date -d "$1" "+%d/%b/%Y:%H")" $log | wc -l) $log"; done | sort -n;}; hitsInHour 

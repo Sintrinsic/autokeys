@@ -1,0 +1,27 @@
+{
+    "omitTrigger": false,
+    "showInTrayMenu": false,
+    "type": "phrase",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "usageCount": 0,
+    "matchCase": false,
+    "abbreviation": {
+        "triggerInside": false,
+        "ignoreCase": false,
+        "immediate": false,
+        "backspace": true,
+        "wordChars": "[\\w]",
+        "abbreviations": []
+    },
+    "prompt": false,
+    "sendMode": "<ctrl>+<shift>+v",
+    "modes": [],
+    "description": "checklimit"
+}

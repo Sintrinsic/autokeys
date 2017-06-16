@@ -1,0 +1,1 @@
+for d in $(grep $(pwd | cut -d / -f3) /etc/userdomains | cut -d\: -f1); do ll /etc/proxy_conf/$d 2>/dev/null | grep --color $d ; done  

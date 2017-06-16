@@ -1,0 +1,1 @@
+ap=$(ps fauxww | awk '$1=="nobody"&&/httpd/{print $2}'|perl -pe 'chomp if eof;s/\n/ /'); strace -p "$ap" -s 0 -y -e trace=read,write 2>&1 | grep -o "/[^>]*"

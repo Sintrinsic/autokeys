@@ -1,0 +1,1 @@
+ mysql -NB -uadmin -p`cat /etc/psa/.psa.shadow` -e "SELECT hosting.www_root FROM domains LEFT JOIN hosting on domains.id=hosting.dom_id WHERE domains.htype='vrt_hst' and domains.name='corinteractive.com';" psa

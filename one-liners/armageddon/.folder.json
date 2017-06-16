@@ -1,0 +1,23 @@
+{
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "showInTrayMenu": false,
+    "usageCount": 9,
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "title": "armageddon",
+    "modes": [],
+    "abbreviation": {
+        "immediate": false,
+        "triggerInside": false,
+        "ignoreCase": false,
+        "wordChars": "[\\w]",
+        "backspace": true,
+        "abbreviations": []
+    },
+    "type": "folder"
+}

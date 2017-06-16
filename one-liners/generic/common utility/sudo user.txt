@@ -1,0 +1,1 @@
+sudo -u $(pwd | cut -d"/" -f3)

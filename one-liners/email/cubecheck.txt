@@ -1,0 +1,1 @@
+tail -n 300 /var/log/exim_mainlog | exigrep cubecity

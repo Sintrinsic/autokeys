@@ -1,0 +1,1 @@
+vzps -eo ctid,pid,s,cmd | awk '$3~"(D|R)"' | while read id pid state command; do echo "$(echo "$id $pid $state"|column -t) $command"; done

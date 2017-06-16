@@ -1,0 +1,31 @@
+{
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "omitTrigger": false,
+    "modes": [
+        1
+    ],
+    "type": "phrase",
+    "description": "dovestatus",
+    "matchCase": false,
+    "sendMode": "<ctrl>+<shift>+v",
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "abbreviations": [
+            ";dovestatus"
+        ],
+        "backspace": true,
+        "immediate": false,
+        "ignoreCase": false,
+        "triggerInside": false
+    },
+    "prompt": true,
+    "showInTrayMenu": false,
+    "usageCount": 1
+}

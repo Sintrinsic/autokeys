@@ -1,0 +1,1 @@
+getbackupsin(){ find $1 -maxdepth 1 -type d -name "*.com" -exec du -sh {} \; ;}; getbackupsin

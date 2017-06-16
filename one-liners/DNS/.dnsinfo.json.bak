@@ -1,0 +1,31 @@
+{
+    "type": "phrase",
+    "showInTrayMenu": false,
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "description": "dnsinfo",
+    "modes": [
+        1
+    ],
+    "omitTrigger": false,
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "backspace": true,
+        "immediate": false,
+        "ignoreCase": false,
+        "triggerInside": false,
+        "abbreviations": [
+            ";dnsinfo"
+        ]
+    },
+    "matchCase": false,
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "usageCount": 0,
+    "sendMode": "kb",
+    "prompt": false
+}

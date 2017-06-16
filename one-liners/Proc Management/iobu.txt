@@ -1,0 +1,1 @@
+iobyuser(){ length=5; [[ $1 ]] && length=$1; iotop -baokn $length | awk '$4 > arr[$1]{arr[$1]=($4+$6);lines[$1]=$0}END{for(pid in lines){print lines[pid]}}'| sed 's/php-cgi/php/' | awk '{usrs[$3" "$12]+=($4+$6);ttl+=($4+$6)}END{for(usr in usrs){print usr, usrs[usr]}; print "Total - "ttl}' | sort -nk3 | tail -n 10|  (echo "USR BIN KB"; cat) | column -t; }; iobyuser 

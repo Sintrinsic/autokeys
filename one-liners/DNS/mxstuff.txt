@@ -1,0 +1,1 @@
+indent () { perl -pe "s/^/' ' x ($1 * 3) /e";}; mxStuff(){ for i in $@; do echo $i; dig MX +short $i | while read priority host; do hip=$(dig +short $host); org=$(whois $hip | grep -oP "(?<=OrgName: ).*"); echo "$priority $host :: $hip :: $org"; done | column -t | indent 1; echo; done; }; mxStuff

@@ -1,0 +1,31 @@
+{
+    "matchCase": false,
+    "description": "weirdprocs",
+    "usageCount": 26,
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "abbreviation": {
+        "immediate": false,
+        "triggerInside": false,
+        "ignoreCase": false,
+        "abbreviations": [
+            ";weirdprocs"
+        ],
+        "wordChars": "[\\w]",
+        "backspace": true
+    },
+    "type": "phrase",
+    "sendMode": "kb",
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "showInTrayMenu": false,
+    "modes": [
+        1
+    ],
+    "prompt": false,
+    "omitTrigger": false
+}

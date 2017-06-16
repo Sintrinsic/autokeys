@@ -1,0 +1,23 @@
+{
+    "title": "Proc Management",
+    "showInTrayMenu": false,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "modes": [],
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "type": "folder",
+    "abbreviation": {
+        "abbreviations": [],
+        "ignoreCase": false,
+        "immediate": false,
+        "wordChars": "[\\w]",
+        "backspace": true,
+        "triggerInside": false
+    },
+    "usageCount": 6
+}

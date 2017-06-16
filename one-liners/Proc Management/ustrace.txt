@@ -1,0 +1,3 @@
+rm -f strace.out; x=0; sproc(){ strace -s 2000 -fffp "$1" 2>&1 | tee strace.out;}; while [[ $x -eq 0 ]] ; do ps fauxwwwe | awk -vuser=$(stat -c '%U' ./) '$1==user&&/173.227.74.5/{print $2}' | while read line; do sproc $line; echo $x; done;x=$(cat strace.out 2>/dev/null | wc -l); done; echo; echo "Last opened files before the crash were:"; grep 'open(' strace.out | tail -5; echo; echo "Last accessed files before crash were:";grep 'access(' strace.out | tail -5; echo; echo "Last errors before the crash:"; grep "= -1" strace.out | tail -n 10; echo "To see more, refer to the strace located at strace.out"
+
+

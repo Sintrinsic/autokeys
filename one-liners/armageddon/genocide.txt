@@ -1,0 +1,1 @@
+while :; do if [ `ps faux | grep php | grep -v "defunct" | wc -l` -gt 60 ]; then echo "Killing PHP - `date` - `cat /proc/loadavg`"; pkill -9 php; else echo " OK - `date` - `cat /proc/loadavg`"; fi; sleep 1; done

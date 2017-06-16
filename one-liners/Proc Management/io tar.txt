@@ -1,0 +1,1 @@
+ps fauxww | grep -v grep | grep -P "(zip|tar |backup)"

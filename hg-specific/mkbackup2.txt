@@ -1,0 +1,1 @@
+mkbackup(){ [[ $1 =~ ^[A-Za-z]+-[0-9]+$ ]] && /scripts/pkgacct --userbackup $(pwd | cut -d"/" -f3) /home/hgtransfer/$1/backup-to;};mkbackup

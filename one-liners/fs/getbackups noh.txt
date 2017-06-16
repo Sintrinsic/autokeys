@@ -1,0 +1,1 @@
+cb2h () { echo $1 | awk '{xin=$1;if(xin==0){print "0 B";}else{x=(xin<0?-xin:xin);s=(xin<0?-1:1);split("B K M G",type);for(i=5;y < 1;i--){y=x/(2^(10*i));}print (y*s)-(y*s%1) "" type[i+2];};}';}; find -regex ".*gz" -exec du -cb {} \+ | sort -n | while read size path; do echo "$(cb2h $size) $path"; done

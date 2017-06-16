@@ -1,0 +1,2 @@
+bash <(vzps faxwwo ctid,pid,args | grep "cPanel Update (upcp)" | grep -v grep | awk '{cts[$1]=cts[$1]" "$2}END{i=0;m=0;for(ct in cts){m++; i=(m/5)-(m/5%1);print "kill -SIGSTOP"cts[ct]"; echo \"kill -SIGCONT"cts[ct]"\" | at now +"i" hours;" }}')
+

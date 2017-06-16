@@ -1,0 +1,5 @@
+while true; do echo "-----------$(date) - :Total_Queries:($(mysqladmin pr | wc -l)):----------"; paste -d "|" <(echo "# ---Proc_Count---"; mysqladmin pr | awk -F"[|_]" '{print $3}' | grep -oP "\S*" | sort | uniq -c | sort -n | tail -n5; sleep 1) <(echo "---Time--- #"; mysqladmin pr | awk -F"|" '{print $5,$7}'| sort -nk2| sed 's/_\S*//'| awk '$1!~/0/{ttl[$1]=ttl[$1]+$2}END{for(user in ttl){print user,ttl[user]}}' | sort -nk2 | column -t | tail -n5) <(echo "---Rows_Read--- #"; mysqladmin pr | awk -F"|" '{print $5,$12}'| sort -nk2| sed 's/_\S*//'| awk '$0!~/0/{ttl[$1]=ttl[$1]+$2}END{for(user in ttl){print user,ttl[user]}}' | sort -nk2 | column -t | tail -n5 )| sed 's/|/ | /g' |column -t;echo; done
+
+
+
+

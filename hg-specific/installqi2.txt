@@ -1,0 +1,1 @@
+GET git.hgfix.net/install-tools/install-tools | bash

@@ -1,0 +1,1 @@
+cat /boot/grub/grub.conf; for dev in /sys/block/vd*/queue/scheduler; do echo noop>$dev; done; perl -i.$(date +%s) -lpe 'if($_=~/^\s+kernel\s/){foreach $o ("elevator=noop","nohz=off","vga=791"){if($_!~$o){$_=~s/^(.*)$/$1 $o/}}foreach $o ("rhgb","quiet","crashkernel=auto"){$_=~s/ $o//}}' /boot/grub/grub.conf

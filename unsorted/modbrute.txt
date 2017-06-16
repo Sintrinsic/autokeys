@@ -1,0 +1,1 @@
+awk -F'[\\[\\]"]' '{print "whitelist "$25" add fireplaceclub.com "$17}' | sort -u

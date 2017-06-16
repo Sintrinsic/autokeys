@@ -1,0 +1,31 @@
+{
+    "showInTrayMenu": false,
+    "sendMode": "<ctrl>+<shift>+v",
+    "omitTrigger": false,
+    "usageCount": 6,
+    "description": "unswapBulk",
+    "modes": [
+        1
+    ],
+    "matchCase": false,
+    "type": "phrase",
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "backspace": true,
+        "triggerInside": false,
+        "immediate": false,
+        "abbreviations": [
+            ";bunswap"
+        ],
+        "ignoreCase": false
+    },
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "prompt": false,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    }
+}

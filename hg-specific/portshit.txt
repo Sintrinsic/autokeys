@@ -1,0 +1,3 @@
+for c in $(seq 1 4); do tdate=$(date --date="$c days ago" "+%m/%d"); sys-snap -n $tdate | awk '$13>100&&$13!~"net_tot"'| awk -v d="$tdate" '{print d,$1}'; done | while read day time; do sys-snap -n $day $time | awk '$2~":"{print $2}' ; done | cut -d: -f2 | sort | uniq -c | sort -n^C
+
+

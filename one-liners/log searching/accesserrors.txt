@@ -1,0 +1,1 @@
+zgrep -vP "HTTP/1\..\" (200|404|30.)" $(pwd | cut -d"/" -f-3)/access-logs/* /home1/apachelogs/$(pwd | cut -d"/" -f3)/*-$(date "+%b-%Y").gz |  sed 's/[^:]*://'| grep "^[0-9]"| awk '{print $7, $9}' | sort | uniq -c | sort -n |   tail -n 10 | column -t

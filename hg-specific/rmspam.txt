@@ -1,0 +1,1 @@
+function rmspam(){ montool spam ec $1; montool spam userpassword $1; montool spam script $1; }; rmspam

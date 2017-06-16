@@ -1,0 +1,1 @@
+ homesize(){ df /home$1 | awk '/home'$1'/{print $4}'; }; whs(){ ssize=$(homesize $1); while true; do echo $(( $ssize - $(homesize $1) )); sleep 1; done;}; whs

@@ -1,0 +1,31 @@
+{
+    "showInTrayMenu": false,
+    "description": "rndcreload",
+    "modes": [
+        1
+    ],
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "omitTrigger": false,
+    "abbreviation": {
+        "immediate": false,
+        "triggerInside": false,
+        "ignoreCase": false,
+        "abbreviations": [
+            ";rndcreload"
+        ],
+        "wordChars": "[\\w]",
+        "backspace": true
+    },
+    "usageCount": 0,
+    "matchCase": false,
+    "prompt": false,
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "sendMode": "<ctrl>+<shift>+v",
+    "type": "phrase"
+}

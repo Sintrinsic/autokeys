@@ -1,0 +1,1 @@
+function ipcheck(){ whois $1; echo; echo "-------iptables-------"; iptables -nL | grep $1;}; ipcheck

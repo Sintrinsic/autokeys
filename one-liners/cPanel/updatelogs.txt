@@ -1,0 +1,1 @@
+stat --printf="%n || %x\n" /var/cpanel/updatelogs/update.* | cut -d: -f-2

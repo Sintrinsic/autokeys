@@ -1,0 +1,1 @@
+find . -type f -name .htaccess -exec grep -HiP "add(type|handler)" {}  \; | grep -iP "\.(php|html)"

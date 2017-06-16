@@ -1,0 +1,1 @@
+codeguardfixer --correct_sites $(pwd | cut -d"/" -f3) ; codeguardfixer --correct_dbs $(pwd | cut -d"/" -f3)

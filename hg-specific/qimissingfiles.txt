@@ -1,0 +1,1 @@
+togrep=$(find $(pwd | cut -d"/" -f-3)/public_html -name wp-config.php | sed "s%/wp-config.php%%;s%/home/$(pwd | cut -d"/" -f3)/%%"| perl -pe 'chomp if eof;s/\n/|/'); grep -vP "\|($togrep)\|" $(pwd | cut -d"/" -f-3)/.cpanel/quickinstall/installations | wc -l

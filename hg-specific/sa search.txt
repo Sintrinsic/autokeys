@@ -1,0 +1,1 @@
+find -name "pacct.*" | while read line; do echo $(date -d @$(echo $line | sed 's/\.\/pacct\.//g'))" :: "$(/opt/hgmods/hgacct/sa $line -m | grep tetuan); done 

@@ -1,0 +1,1 @@
+/opt/zabbix/bin/yum_status;service zabbix_agent restart

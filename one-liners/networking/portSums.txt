@@ -1,0 +1,1 @@
+ echo "==== INBOUND ====="; ss -an | awk -F'[: ]+' '$6<10000{print $6}' | sort | uniq -c | sort -n | tail -n 6; echo "==== OUTBOUND ===="; ss -an | awk -F'[: ]+' '$6>10000{print $8}' | sort | uniq -c | sort -n | tail -n 6

@@ -1,0 +1,1 @@
+unswap(){ [[ $1 && $(ls /proc/$1/maps) ]]  && ((gcore -o /tmp/deleteme $1 &>/dev/null; rm -fv /tmp/deleteme.$1)&) 2>/dev/null  || echo "must provide valid pid";};unswap

@@ -1,0 +1,1 @@
+grep -P "<= \w*@($(grep $(pwd | cut -d/ -f3) /etc/userdomains | cut -d: -f1 | perl -pe 'chomp if eof;s/\n/|/'))" /var/log/exim_mainlog | awk -F'[ \t:]+' '{print $1, $2":00",$7}' | sort | uniq -c | sort -n | sed '1i COUNT DATE HOUR ADDRESS' | column -t

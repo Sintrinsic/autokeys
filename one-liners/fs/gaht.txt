@@ -1,0 +1,1 @@
+gaht(){ (pwd | awk 'BEGIN{RS="/"}{path=path$1"/"; print path".htaccess"}'; grep "^Include" /usr/local/apache/conf/httpd.conf | awk -F'"' '{print $2}' | (echo "/usr/local/apache/conf/httpd.conf"; cat) ; ) | while read line; do echo "=================== $line ===================="; grep "$@" $line; done;}; gaht

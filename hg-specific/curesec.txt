@@ -1,0 +1,1 @@
+function curesec() { grep -oP ".*(?=: "$1")" /etc/userdomains | grep -vP "(\..*\.|\*)" | while read line; do wlmodsec $line 900285; done; }; curesec 

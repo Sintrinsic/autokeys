@@ -1,0 +1,1 @@
+while true; do echo "------------$(date)----------";ps fauxww |awk 'BEGIN{ttl["Total"]=0} /php/{print $1}'|sort| uniq -c | sort -n | column -t | sort -n| tail -n 5; sleep 1; done

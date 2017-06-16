@@ -1,0 +1,1 @@
+df -h | awk -F'[ \t%]+' '/\/home/{ttl+=$5;cnt+=1;print $NF,$5"%"}END{print "Total: "ttl/cnt"%"}'

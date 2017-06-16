@@ -1,0 +1,31 @@
+{
+    "modes": [
+        1
+    ],
+    "abbreviation": {
+        "backspace": true,
+        "abbreviations": [
+            ";fuser"
+        ],
+        "triggerInside": false,
+        "ignoreCase": false,
+        "immediate": false,
+        "wordChars": "[\\w]"
+    },
+    "description": "fuser",
+    "omitTrigger": false,
+    "matchCase": false,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "showInTrayMenu": false,
+    "usageCount": 4,
+    "type": "phrase",
+    "sendMode": "<ctrl>+<shift>+v",
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "prompt": false
+}

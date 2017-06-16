@@ -1,0 +1,31 @@
+{
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "modes": [
+        1
+    ],
+    "omitTrigger": false,
+    "showInTrayMenu": false,
+    "matchCase": false,
+    "type": "phrase",
+    "sendMode": "<ctrl>+<shift>+v",
+    "usageCount": 2,
+    "description": ";ustrace",
+    "prompt": false,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    },
+    "abbreviation": {
+        "immediate": false,
+        "triggerInside": false,
+        "ignoreCase": false,
+        "backspace": true,
+        "wordChars": "[\\w]",
+        "abbreviations": [
+            ";ustrace"
+        ]
+    }
+}

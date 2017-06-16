@@ -1,0 +1,1 @@
+find . -maxdepth 1 -regex .*wp.* -exec find {} -delete \; ; rm index.php xmlrpc.php ;

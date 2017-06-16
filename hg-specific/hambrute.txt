@@ -1,0 +1,1 @@
+function hambrute() { grep "<= $1" /var/log/exim_mainlog | cut -d" " -f3 | sort -u | tail -n 30 | while read line; do echo "hamlookup "$line; done; }; hambrute 

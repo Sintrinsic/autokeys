@@ -1,0 +1,1 @@
+function asips(){ octs=2; [[ $2 ]] && octs=$2; dom='\\*';[[ $1 ]] && dom="$1"; lynx --dump --width=10000 localhost/whm-server-status| grep "GET\\|POST" | awk -v target="$dom" '$12~target{print $11}' | cut -d. -f-$octs | sort | uniq -c | sort -n;}; asips

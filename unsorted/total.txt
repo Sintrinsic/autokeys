@@ -1,0 +1,262 @@
+5dp2:
+od=$(date --date="5 days ago" "+%d"); d=$(date "+%d"); for i in $(seq $od $d); do echo -e $(sar -q -f /var/log/sa/sa0${i}| awk '{ if ($5>N) {five="\\e[1;31m"$5"\\e[0m"} else {five="\\e[1;32m"$5"\\e[0m"} if ($6>N) {six="\\e[1;31m"$6"\\e[0m"} else {six="\\e[1;32m"$6"\\e[0m"} if ($7>N) {seven="\\e[1;31m"$7"\\e[0m"} else {seven="\\e[1;32m"$7"\\e[0m"} if ($5>N || $6>N || $7>N) {printf "%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\n",$1,$2,$3,$4,five,six,seven}}' N=$(grep 'model name' /proc/cpuinfo| wc -l)); done 
+5d peaks1:
+m=$(date "+%m"); od=$(date --date="5 days ago" "+%d"); d=$(date "+%d"); for i in $(seq $od $d); do echo $m"/"$i" : "$(sys-snap $m/$i | sort -nk2 | tail -n1) | column -t; done
+
+5d peaks:
+echo "Peak load according to sys-snap for the last 5 days:"; for i in $(seq 0 5 | sort -r); do d=$(date --date="$i days ago" "+%m/%d"); echo $d" : "$(sys-snap $d | sort -nk2 | tail -n1) | column -t; done;
+
+
+
+
+ajaxstrace:
+user=`pwd | cut -d \/ -f 3`; x=1; killall -6 -u $user; sleep 2; while [ $x = 1 ]; do process=`pgrep -u $user`; if [ $process ]; then x=0; fi;  done; strace -vvttf -s 256  -p $process 2>&1| tee strace
+apache conf:
+/usr/local/apache/conf/httpd.conf
+
+apachegrep:
+grep 173.227 /usr/local/apache/logs/error_log
+apachestatus:
+lynx --dump --width=10000 localhost/whm-server-status| grep "GET\\|POST" | awk '{print $11,$5,$12,$14}' |column -t|sort  -nk2
+
+beans:
+ awk '$6 > 0 && $1!~/^[0-9]/' /proc/user_beancounters
+cg1:
+Enter phrase contents
+cg2:
+Enter phrase contents
+cgf:
+codeguardfixer --correct_sites $(pwd | cut -d"/" -f3) ; codeguardfixer --correct_dbs $(pwd | cut -d"/" -f3)
+cg:
+echo "codeguardsync "$(cat /etc/sysconfig/network | grep -oP "(?<=HOSTNAME=).*") $(pwd | cut -d"/" -f3); codeguardfixer --correct_sites $(pwd | cut -d"/" -f3); codeguardfixer --correct_dbs $(pwd | cut -d"/" -f3)
+checkCache:
+for d in $(grep $(pwd | cut -d / -f3) /etc/userdomains | cut -d\: -f1); do ll /etc/proxy_conf/$d 2>/dev/null | grep --color $d ; done  
+checklimit:
+cat /dev/shm/limit/$(id -u $(pwd | cut -d"/" -f3)) 2>/dev/null|| echo "Not limited"
+
+checksites:
+function checksites(){ if [ $1 ]; then u=$1; else u=$(pwd | cut -d"/" -f3) ; fi;  grep $u  /etc/userdomains | cut -d":" -f1 | while read line; do curl -sL -w "%{http_code} %{url_effective}" "$line" -o /dev/null; echo; done;}; checksites 
+checkspool:
+find /var/spool | wc -l
+
+cplogs:
+search_cpanel -a -u $(stat -c %U .) 
+crht:
+python -c "arr= ('"$(pwd)"').split('/'); print '/'
+for i in range(len(arr)):
+    print '/'.join(arr[0:i+1])" | grep -v "^$" | while read line; do echo "================$line================="; cat $line"/.htaccess" 2>/dev/null ; done
+
+crongrep:
+function crongrep(){ sstr="."; if [ $# -eq 1 ]; then sstr=$1 ;fi; for user in $(cut -f1 -d: /etc/passwd); do cronval=$(crontab -u $user -l 2>/dev/null | grep $sstr); [[ -z $cronval ]] || (echo "=========== $user ========="; printf "$cronval\n"); done; }; crongrep
+cubecheck:
+tail -n 300 /var/log/exim_mainlog | exigrep cubecity
+cube ids1:
+grep  "[=>] cubecitytest@gmail.com" /var/log/exim_mainlog | awk '{print $1" "$2" "$4" "$3}'
+cube ids:
+grep  "[=>] cubecitytest@gmail.com" /var/log/exim_mainlog | awk '{print $1" "$2" "$4" "$3}' 
+
+cube:
+exigrep  "<?=>? cubecitytest@" /var/log/exim_mainlog
+
+curesec:
+function curesec() { grep -oP ".*(?=: "$1")" /etc/userdomains | grep -vP "(\..*\.|\*)" | while read line; do wlmodsec $line 900285; done; }; curesec 
+
+dc1:
+function dt(){ logfile=$(echo /home1/apachelogs/$(pwd | cut -d"/" -f3)/$(grep -B10 "$(pwd)$" /usr/local/apache/conf/httpd.conf | grep -Po '(?<=ServerName ).*' | uniq)"-"$(date "+%b-%Y")".gz"); domain=$(grep -B10 "$(pwd)$" /usr/local/apache/conf/httpd.conf | grep -Po '(?<=ServerName ).*' | uniq); echo "--------- Nginx errors ----------"; zgrep $domain /var/log/nginx/* | cut -d":" -f2 | sed 's/\(.*\)/\1:00/' | sort | uniq -c | sort -k2d -k3d | tail -n5; echo "--------- Too many connection errors ---------"; grep -i "too many connections" /var/lib/mysql/$(grep -oP "(?<=HOSTNAME=).*" /etc/sysconfig/network).err | sed 's/\(..\)\(..\)\(..\)/\1-\2-\3/' | awk '{"date --date=\""$1" "$2"\" \"+%D %H\":00" | getline d; print d}' | sort | uniq -c | sort -dk2; echo "--------- Gaps in successful hits ----------"; od=0; (zcat $logfile||cat $logfile) | awk -F"[  []" '/HTTP\/1.." (200|301|302)/{print $5}' | sed 's/:/  /;s&/&-&g' | while read line; do nd=$(date --date="$line"  "+%s"); echo $line" "$(( $nd - $od ));od=$nd; done | awk '{if($NF > 400){print $0}}'|tail -n10; echo "---------- uptime -----------"; uptime; echo "------------ iskilled -------------"; iskilled; }; dt
+dc:
+function dt(){ logfile=$(echo /home/apachelogs/$(pwd | cut -d"/" -f3)/$(grep -B10 "$(pwd)$" /usr/local/apache/conf/httpd.conf | grep -Po '(?<=ServerName ).*' | uniq)"-"$(date "+%b-%Y")".gz"); domain=$(grep -B10 "$(pwd)$" /usr/local/apache/conf/httpd.conf | grep -Po '(?<=ServerName ).*' | uniq); echo "--------- Nginx errors ----------"; zgrep $domain /var/log/nginx/* | cut -d":" -f2 | sed 's/\(.*\)/\1:00/' | sort | uniq -c | sort -k2d -k3d | tail -n5; echo "--------- Too many connection errors ---------"; grep -i "too many connections" /var/lib/mysql/$(grep -oP "(?<=HOSTNAME=).*" /etc/sysconfig/network).err | sed 's/\(..\)\(..\)\(..\)/\1-\2-\3/' | awk '{"date --date=\""$1" "$2"\" \"+%D %H\":00" | getline d; print d}' | sort | uniq -c | sort -dk2; echo "--------- Gaps in successful hits ----------"; od=0; (zcat $logfile||cat $logfile) | awk -F"[  []" '/HTTP\/1.." (200|301|302)/{print $5}' | sed 's/:/  /;s&/&-&g' | while read line; do nd=$(date --date="$line"  "+%s"); echo $line" "$(( $nd - $od ));od=$nd; done | awk '{if($NF > 400){print $0}}'|tail -n10; echo "---------- uptime -----------"; uptime; echo "------------ iskilled -------------"; iskilled; echo "------ Recent admin activity --------"; history | grep "USER BEGIN" | grep -v grep| tail -n 10; }; dt
+docof:
+grep -B10 "$(pwd)$" /usr/local/apache/conf/httpd.conf | grep -Po '(?<=ServerName ).*' | uniq
+
+downtime:
+function downtime(){ od=0; (zcat $1||cat $1) | awk -F"[  []" '/HTTP\/1.." (200|301|302)/{print $5}' | sed 's/:/  /;s&/&-&g' | while read line; do nd=$(date --date="$line"  "+%s"); echo $line" "$(( $nd - $od ));od=$nd; done | awk '{if($NF > 400){print $0}}';  }; downtime 
+emailsbefore1:
+function oldMail(){ find -name "*,S\=*" ! -newermt $(date --date=$1" days ago" "+%m/%d/%y") ;}; oldMail
+emailsbefore:
+find -name "*,S\=*" ! -newermt 
+esearch:
+function esearch(){ grep $1 /var/log/exim_mainlog | grep -P "<=\s\S*"$2; }; esearch 
+
+exim log:
+/var/log/exim_mainlog
+find domain:
+function finDom(){ echo "$(grep -ir $1 /var/cpanel/user{s,data}; grep -Hi $1 /usr/local/apache/conf/httpd.conf; ls /var/named | grep $1; grep $1 /etc/named.conf;)" | sed 's/:.*//g'|sort |uniq; }; finDom 
+findom2:
+ function fdom() { bldgrn='\e[1;32m';bldred='\e[1;31m';txtrst='\e[0m'
+  if [[ $1 ]] ; then dom=$1 ; else read -p "Domain name?" dom; fi
+  echo -e "\nLocating remnants. (${bldred}found${txtrst}/${bldgrn}not found${txtrst})\n"
+  # checkin' dat httpd.conf
+  if [[ $(egrep -l "(\s|^)$dom($|\s)" "/usr/local/apache/conf/httpd.conf") ]]
+   then echo -e "${bldred}\c"
+   else echo -e "${bldgrn}\c"
+  fi ;echo -e "/usr/local/apache/conf/httpd.conf${txtrst}"
+  #checkin dem /etc/*domains files
+  domchk=$(egrep -l "(:|\s|^)$dom(:|$|\s)" /etc/*domains)
+  if [[ $domchk != "" ]]
+   then echo -e "${bldred}$domchk${txtrst}" | sed 's| |\n |g'
+  else echo -e "${bldgrn}/etc/*domains${txtrst}"
+  fi
+  # checkin' dem cpanel user files
+  domchk=$(egrep -l "(\s|^|=)$dom($|\s)" /var/cpanel/users/*)
+  if [[ $domchk != "" ]]
+   then echo -e "${bldred}$domchk${txtrst}" | sed 's| |\n |g'
+  else echo -e "${bldgrn}/var/cpanel/users/*${txtrst}"
+  fi
+  # checkin' dat cpanel userdata
+  domchk=$(egrep -rl "(\s|^|=)$dom($|\s)" /var/cpanel/userdata/*)
+  if [[ $domchk != "" ]]
+   then echo -e "${bldred}$domchk${txtrst}" | sed 's| |\n |g'
+  else echo -e "${bldgrn}/var/cpanel/userdata/*${txtrst}"
+  fi
+  # checkin' dat zone file
+  domchk=$(ls /var/named/ | egrep "^$dom.db$")
+  if [[ $domchk != "" ]]
+   then echo -e "${bldred}/var/named/$domchk${txtrst}" | sed 's| |\n |g'
+  else echo -e "${bldgrn}DNS Zone${txtrst}"
+  fi
+} 
+findphpmods:
+find -name .htaccess -exec grep -HiP "(add(type|handler)|suphp).*php" {} \;
+fixrpms:
+/scripts/check_cpanel_rpms --fix
+ftpoos:
+I have reviewed this issue for you, and while we do not directly support 3rd party software like this, and the best support for the product would be its developers, we can provide some general information. 
+
+Most Web Design suites like this use FTP as their backend, so to connect, you would want to use the following guide to verify the connection settings: 
+ https://support.hostgator.com/articles/specialized-help/ftp/ftp-settings-and-connection
+
+Alternately, if you need to upload content, you can download and install filezilla with the instructions from this article: 
+https://support.hostgator.com/articles/specialized-help/ftp/obtaining-and-installing-filezilla
+
+If you have any further questions or concerns, please don't hesitate to let us know. 
+
+
+fuser:
+function fuser(){ grep -i $1 /etc/passwd /etc/userdomains /var/cpanel/userdata/; ls /var/cpanel/users/ | grep -i $1; }; fuser bacom
+getdbs:
+mysql -Nsre "show databases like '"$(pwd | cut -d"/" -f3)"_%'"
+getdoms:
+grep -oP ".*(?=: "$(echo $PWD|cut -d'/' -f3)")" /etc/userdomains
+get hostname:
+cat  /etc/sysconfig/network   /etc/hosts
+gethostname:
+grep -oP "(?<=HOSTNAME=\").*(?=\")"  /etc/sysconfig/network
+getIDs:
+grep "domain.com" /var/log/exim_mainlog | awk '{print $3}' | grep -v "^H" | sort -u
+getinterface:
+function getinterface() { ifconfig | grep -B1 $(grep -C1 $1 /usr/local/apache/conf/httpd.conf | grep -oP "(?<=<VirtualHost ).*(?=:80>)" | sort -u | head -n1)" " | grep -oP ".*(?= Link )" ;}; getinterface
+getips:
+ip a | grep "inet " | grep -v "127.0.0.1" | awk '{print $2}' | cut -d"/" -f1
+
+get nameservers:
+ls /var/named/ | awk -F".db" '/^ns/&&(/websitewelcome/||/hostgator.com/){print $1}' | sort -n
+
+getqueries:
+sys='sys-snap -a 1/3 11:51'; echo; echo "$sys"|awk '{print $3,$4}'; echo; echo "[ Top Script(s) ]"; $sys |grep -oP '(?<=SCRIPT_FILENAME=)\S*'|sort|uniq -c|sort -gr; echo; echo "[ Top Remote IP(s) ]"; $sys |grep -oP '(?<=REMOTE_ADDR=)\S*'|sort|uniq -c|sort -gr; echo; echo "[ Top URI(s) ]"; $sys |grep -oP '(?<=REQUEST_URI=)\S*'|sort|uniq -c|sort -gr; echo; echo "[ Top Referer(s) ]"; $sys |grep -oP '(?<=HTTP_USER_AGENT=).*(?=QUERY)'|sort|uniq -c|sort -gr; echo  
+godstrace:
+echo "Open the page you wish to test and refresh it."; echo; echo; user=`pwd | cut -d \/ -f 3`;x=1; while (( $x == 1 )); do pid=$(pgrep -u $user php | head -1); [[ $pid ]] && x=0; done; strace -vvvtff -o strace -s1000 -p $pid; echo; echo "Last opened files before the crash were:"; echo; grep 'open(' strace.$pid | tail -5; echo; echo "Last accessed files before crash were:"; echo; grep 'access(' strace.$pid | tail -5; echo "To see more, refer to the strace located at strace.$pid" 
+hambrute:
+function hambrute() { grep "<= $1" /var/log/exim_mainlog | cut -d" " -f3 | sort -u | tail -n 30 | while read line; do echo "hamlookup "$line; done; }; hambrute 
+imapuse:
+function imapuse(){ grep $1  /var/log/maillog | awk '/Logged out/&&/imap/{print $6" "$11}' | sed 's/imap(//;s/): out=/ /;s/,//' | awk '{sums[$1]+=$2} END{for(i in sums){ print i" "sums[i] / 1024 / 1024 "MB"} }';}; imapuse 
+installqi2:
+GET git.hgfix.net/install-tools/install-tools | bash
+installqi:
+rpm -e --nodeps quickinstall ; yum clean all ; yum -y install quickinstall
+install sys-snap:
+bash <(GET http://git.hgfix.net/install-syssnap/snappy/install-syssnappy)
+
+modbrute:
+awk -F'[\\[\\]"]' '{print "whitelist "$25" add fireplaceclub.com "$17}' | sort -u
+ne:
+function nginxerrors() { zgrep $1 /var/log/nginx/* | cut -d":" -f2 | sed 's/\(.*\)/\1:00/' | sort | uniq -c | sort -k2d -k3d;  }; nginxerrors
+phpgrep:
+function phpgrep(){ find . -type f -name "*.php" -exec grep -H "${1}" "{}" \;;} ; phpgrep 
+phpinfo:
+ls phpinfo.php 2>/dev/null || (echo "No phpinfo.php. Creating."; echo "<?php phpinfo(); ?>" > phpinfo.php && chown $(pwd | cut -d"/" -f3). phpinfo.php&& chmod 644 phpinfo.php )
+
+phpupgrade:
+bash <(GET git.hgfix.net/install-php53/install-php53) -
+php versions:
+php -i | grep "PHP Version"| uniq; ls /opt | grep php5
+phpv:
+find . -type f -name .htaccess -exec grep -HiP "add(type|handler)" {}  \; | grep -iP "\.(php|html)"
+pl:
+function pl(){ out=$(lsof -nPi | grep ":$1.*LISTEN" | awk '{print $8, $9}' | sort -u); [[ $out ]] && (echo "Listening:"; echo $out) || echo "Dead";}; pl
+plugincount:
+strace -r -s 500 php index.php 2>&1 | awk -F'[ "]' '/plugins/{print $8}' | grep -v "^$" | sort | uniq -c | sort -n
+
+popchecks:
+awk -F"[ :]" '/login/&&('$(find $(pwd | cut -d"/" -f -3)/mail/*/*/cur/ -type d | cut -d"/" -f5 | sort -u | while read line; do echo -n "/$line/"; done | sed 's&//&/||/&g')'){print $1" "$2"-"$3":00 "$15}' /var/log/maillog | sort | uniq -c | sort -n | sed 's/rip=//;s/,//' |  awk '$1>30'
+proctimers:
+echo "" > proclist; pid=$$;proc=0;declare -a uprocs; trap "cat proclist | column -t;break;break;kill -9 "$pid SIGINT;  user=`pwd |cut -d"/" -f3` ;while true; do procs=$(ps ufh -u $user); while read line; do proc=$(echo $line | cut -d" " -f2); script=$proc" "$(echo $line | awk '{print $3, $12}') ; if ! [[ ${uprocs[$proc]#} ]]; then uprocs[$proc]=$script; ( echo ${uprocs[$proc]}" "$(/usr/bin/time -f "%e" strace -p $proc 2>&1 | tail -n1)  >> proclist &)2>/dev/null; fi; done <<< $procs; done 
+
+
+pstrace:
+user=$(pwd |cut -d'/' -f3); ip=173.227.74.5; while ( true ); do for pid in $(pgrep -u $user php);do awk 'BEGIN {FS="="; RS="\0";} /REMOTE_ADDR/ {if ($2 == "'$ip'") system("strace -o strace -s 10000 -t -p '$pid'")}' /proc/$pid/environ; done; done 
+randmail1:
+find /home/$(pwd | cut -d"/" -f3)/mail/*/*/cur -maxdepth 1 -type d | awk -F"/" '{print $(NF-1)"@"$(NF-2)}' | shuf -n1 | while read line; do pwtemp setmail $line; done
+
+randmail domain:
+function randmail(){ find /home/$(pwd | cut -d"/" -f3)/mail/$1/*/cur -maxdepth 1 -type d | awk -F"/" '{print $(NF-1)"@"$(NF-2)}' | shuf -n1 | while read line; do pwtemp setmail $line; done; }; randmail
+randmail:
+find /home/*/mail/*/*/cur -maxdepth 1 -type d | awk -F"/" '{print $(NF-1)"@"$(NF-2)}' | shuf -n1 | while read line; do pwtemp setmail $line; done
+
+rat:
+function rat { python -c "arr= ('"$(pwd)"/"$1"').split('/'); print '/'
+for i in range(len(arr)):
+    print '/'.join(arr[0:i+1])" | grep -v "^$" | while read line; do echo "$(stat --format='%A %U %G' $line)    $(lsattr -d $line 2>/dev/null)"; done | column -t ;}; rat 
+RebuildConf:
+/scripts/updateuserdatacache && /scripts/updateuserdomains && /scripts/rebuildhttpdconf && service httpd restart 
+resellermaillogs:
+function allresellerlogs(){ doms=$(oi -d $1 | tr "\n" "|"|sed 's/\./\\./g'); exigrep -P "("${doms::${#doms}-1}")" /var/log/exim_mainlog.1.gz;}; allresellerlogs
+rv skin:
+/root/rvadmin/auto_rvskin.pl 
+sa search:
+find -name "pacct.*" | while read line; do echo $(date -d @$(echo $line | sed 's/\.\/pacct\.//g'))" :: "$(/opt/hgmods/hgacct/sa $line -m | grep tetuan); done 
+
+scores:
+scores=$RANDOM;lynx --dump --width=1000 http://localhost/whm-server-status?notable > /tmp/${scores};echo;sed -n '/Current Time/,/requests currently being processed/p' /tmp/${scores};echo -e "\n\nActive requests:\n $(egrep '\[Write|Read\]' /tmp/${scores}|cut -d\{ -f2|sed -e 's/\}//g'|awk '{print$NF,$1,$2}'|sort|uniq -c|sort -rnk1|head)\n\nRecent activity:\n$(egrep '\[Write|\[Ready?\]|\[Keepalive\]|\[Closing\]|\[Dead\]' /tmp/${scores}|cut -d\{ -f2|sed -e 's/\}//g'|awk '{print$NF,$1,$2}'|sort|uniq -c|sort -rnk1|head)\n\nKeepalive:\n $(egrep '\[Keepalive\]' /tmp/${scores}|cut -d\{ -f2|sed -e 's/\}//g'|awk '{print$NF,$1,$2}'|sort|uniq -c|sort -rnk1|head)\n";grep -A1000 'FastCGI processes' /tmp/${scores}|grep -v '___'|while read i;do if [[ "$i" =~ Total ]];then echo -e "$i\nUser Pid Active Idle Accesses State\n" >> /tmp/${scores}.fcgi;fi;if [[ "$i" =~ [0-9]+{1,5} || "$i" =~ Pid ]];then echo $i;fi;done|sed -e 's/^Process:.*/\n/'|while IFS=' ' read pid stuff;do if [[ "$pid" =~ ^[0-9]+{1,5}$ ]];then uid=$(stat -c "%u" /proc/${pid} 2>&1);if [[ "$uid" =~ ^[0-9]+$ ]];then user=$(awk -F':' '/x:'"${uid}"':/ {print$1}' /etc/passwd);echo "${user} ${pid} ${stuff}" >> /tmp/${scores}.fcgi;fi;fi;done && [[ -f /tmp/${scores}.fcgi ]] && column -t /tmp/${scores}.fcgi;[[ -f /tmp/${scores} ]] && rm -f /tmp/${scores};[[ -f /tmp/${scores}.fcgi ]] && rm -f /tmp/${scores}.fcgi
+sechits1:
+Enter phrase contents
+sechits:
+function sechits(){ grep $1 /usr/local/apache/logs/error_log |  grep -oP "(?<=\[id \").*?(?=\"\])" | sort | uniq -c | sort -n; }; sechits 
+
+sec:
+function sec(){ [ -e $(pwd|cut -d'/' -f-3)/.security/security.lock ] && echo && echo 'Security Lock File Exists:' && rm -i $(pwd|cut -d'/' -f-3)/.security/security.lock ; echo "screen -x  $1-scan"; screen -dmS $1-scan bash; sleep .3; screen -S $1-scan -p 0 -X stuff $'touch .skip_next_{hg,db}_backup; security -i 0 \n' ;}; sec 
+sendTests:
+function sendTest(){ pwtemp unsetmail $1 &>/dev/null; lip=$(ip a | grep "inet " | grep -v "127.0.0.1" | awk '{print $2}' | cut -d"/" -f1 | tail -n1);temp=$(echo $(pwtemp setmail $1) | grep -Po "(?<=user ).*(?= note:)"); account=$(echo $temp | awk -F" is " '{print $1}'); pass=$(echo $temp | awk -F" is " '{print $2}'); echo "This is a test from your host. Please ignore." | mailx -S "smtp-auth-user=$account" -S "smtp-auth-password=$pass" -S "from=$account" -S "smtp=$lip:25" -S "smtp-auth=login" -s "This is a test." cubecitytest@gmail.com; sleep 3; grep cubecitytest /var/log/exim_mainlog | awk '{print $3}' | tail -n1 | while read line; do exigrep $line /var/log/exim_mainlog;done ; }; sendTest 
+sendTest:
+function sendTest(){ pwtemp unsetmail $1 &>/dev/null; lip=$(ip a | grep "inet " | grep -v "127.0.0.1" | awk '{print $2}' | cut -d"/" -f1 | tail -n1);temp=$(echo $(pwtemp setmail $1) | grep -Po "(?<=user ).*(?= note:)"); if [ $2 ]; then target=$2; else target="cubecitytest@gmail.com"; fi; account=$(echo $temp | awk -F" is " '{print $1}'); echo; echo "Sending from $account to $target now"; pass=$(echo $temp | awk -F" is " '{print $2}'); echo "This is a test from your host. Please ignore." | mailx -S "smtp-auth-user=$account" -S "smtp-auth-password=$pass" -S "from=$account" -S "smtp=$lip:25" -S "smtp-auth=login" -s "This is a test." $target; echo "Login info: $account $pass"; echo; sleep 3; tail -n 500 /var/log/exim_mainlog | exigrep $account ; }; sendTest
+snaphp:
+function snaphp(){ sys-snap $1 $2 | awk '/\/php/{print $14" "$15}' | sort | uniq -c | sort -n;}; snaphp 
+snapips:
+function snapips(){ sys-snap -a $1 $2 | grep -A1 "/php" | grep -oP "(?<=REMOTE_ADDR=)[0-9\.]*" | sort | uniq -c | sort -n ;}; snapips
+snap:
+sys='sys-snap -a 1/3 11:51'; echo; echo "$sys"|awk '{print $3,$4}'; echo; echo "[ Top Script(s) ]"; $sys |grep -oP '(?<=SCRIPT_FILENAME=)\S*'|sort|uniq -c|sort -gr; echo; echo "[ Top Remote IP(s) ]"; $sys |grep -oP '(?<=REMOTE_ADDR=)\S*'|sort|uniq -c|sort -gr; echo; echo "[ Top URI(s) ]"; $sys |grep -oP '(?<=REQUEST_URI=)\S*'|sort|uniq -c|sort -gr; echo; echo "[ Top Referer(s) ]"; $sys |grep -oP '(?<=HTTP_USER_AGENT=).*(?=QUERY)'|sort|uniq -c|sort -gr; echo 
+ssh brutes:
+awk '/Failed/ {print $11}' /var/log/secure | sort | uniq -c | sort -rn | head
+stamp:
+$(date "+%s")
+
+sudo user:
+sudo -u $(pwd | cut -d"/" -f3)
+supersar:
+echo -e $(sar -q | awk '{ if ($5>N) {five="\\e[1;31m"$5"\\e[0m"} else {five="\\e[1;32m"$5"\\e[0m"} if ($6>N) {six="\\e[1;31m"$6"\\e[0m"} else {six="\\e[1;32m"$6"\\e[0m"} if ($7>N) {seven="\\e[1;31m"$7"\\e[0m"} else {seven="\\e[1;32m"$7"\\e[0m"} {printf "%s\\t%s\\t%s\\t%s\\t%s\\t%s\\t%s\\n",$1,$2,$3,$4,five,six,seven}}' N=$(grep 'model name' /proc/cpuinfo| wc -l))
+suptime:
+function suptime(){ orig=$(ps -p $(ps fauxww | grep -i $1 | awk '!/\\/{print $2}') -o etime= ); ut=$(echo $orig | sed 's/-/ days /;s/:/ hours /;s/:/ minutes /;s/.$/ seconds /')" ago"; echo $orig;date --date="$ut" "+%m/%d %H:%M" ;}; suptime dovecot
+topsize:
+find -type d -exec du -sh {} \+ | sort -k1h -k2r | tail -20
+uf:
+function uf(){ grep -A5 " $1$" /usr/local/apache/conf/httpd.conf | grep -Po '(?<=DocumentRoot ).*';};  uf 
+unsecure:
+function unsecure(){ grep $1 /usr/local/apache/logs/error_log | grep ModSecurity | tail -n1 | awk -F'[\\[\\]"]' '{"wlmodsec "$25" "$17" n" |getline}'; }; unsecure example.com
+userdoms:
+grep -Po ".*(?=: "$(pwd | cut -d"/" -f3)")" /etc/userdomains
+wpbrute:
+GET http://git.hgfix.net/wpbrute/wpbrute.sh | bash 
+xmlrpc:
+<Files xmlrpc.php>
+deny from all
+</Files>
+

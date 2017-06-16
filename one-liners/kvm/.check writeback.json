@@ -1,0 +1,31 @@
+{
+    "sendMode": "<ctrl>+<shift>+v",
+    "abbreviation": {
+        "ignoreCase": false,
+        "wordChars": "[\\w]",
+        "triggerInside": false,
+        "backspace": true,
+        "abbreviations": [
+            ";cwriteback"
+        ],
+        "immediate": false
+    },
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "usageCount": 1,
+    "showInTrayMenu": false,
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "modes": [
+        1
+    ],
+    "matchCase": false,
+    "prompt": false,
+    "type": "phrase",
+    "omitTrigger": false,
+    "description": "check writeback"
+}

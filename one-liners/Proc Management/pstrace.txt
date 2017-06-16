@@ -1,0 +1,1 @@
+user=$(pwd |cut -d'/' -f3); ip=173.227.74.5; while ( true ); do for pid in $(pgrep -u $user php);do awk 'BEGIN {FS="="; RS="\0";} /REMOTE_ADDR/ {if ($2 == "'$ip'") system("strace -o strace -s 10000 -t -p '$pid'")}' /proc/$pid/environ; done; done 

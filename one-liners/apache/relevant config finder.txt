@@ -1,0 +1,1 @@
+rif(){ echo $1; grep "^Include" $1 | awk -F"[ \"]+" '{print $2}' | while read line; do rif $line; done;}; (pwd | awk 'BEGIN{RS="/"}{cpath=cpath""$1"/"; print cpath".htaccess"}'; rif /etc/httpd/conf/httpd.conf;)

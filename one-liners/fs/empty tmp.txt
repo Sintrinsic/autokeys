@@ -1,0 +1,1 @@
+find -user $(ls -la | awk '{usrs[$3]+=$5}END{for(usr in usrs){print usrs[usr],usr}}' | sort -n | tail -n1 | awk '{print $2}') ! -regex "./sess.*"

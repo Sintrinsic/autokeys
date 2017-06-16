@@ -1,0 +1,31 @@
+{
+    "matchCase": false,
+    "modes": [
+        1
+    ],
+    "omitTrigger": false,
+    "hotkey": {
+        "hotKey": null,
+        "modifiers": []
+    },
+    "sendMode": "<ctrl>+<shift>+v",
+    "showInTrayMenu": false,
+    "usageCount": 18,
+    "abbreviation": {
+        "wordChars": "[\\w]",
+        "immediate": false,
+        "backspace": true,
+        "ignoreCase": false,
+        "abbreviations": [
+            ";c2do"
+        ],
+        "triggerInside": false
+    },
+    "type": "phrase",
+    "prompt": false,
+    "filter": {
+        "regex": null,
+        "isRecursive": false
+    },
+    "description": "docof"
+}

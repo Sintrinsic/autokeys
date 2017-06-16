@@ -1,0 +1,1 @@
+mysql -BNe "SELECT user, Length(Password) FROM mysql.user;"|grep 16|sort -d|awk '{print $1}'|uniq | grep _ | sort | awk -F'_' '{if(usr[$1] != ""){usr[$1]=usr[$1]"|"$2}else{usr[$1]=$2}}END{for(un in usr){print un,un"_("usr[un]")"}}' | while read usr grexp; do find /home/$usr/public_html/ -type f -exec grep -HP "$grexp" {} \; ; done

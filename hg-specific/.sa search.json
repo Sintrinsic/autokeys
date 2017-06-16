@@ -1,0 +1,31 @@
+{
+    "sendMode": "kb",
+    "usageCount": 0,
+    "prompt": false,
+    "matchCase": false,
+    "modes": [
+        1
+    ],
+    "type": "phrase",
+    "filter": {
+        "isRecursive": false,
+        "regex": null
+    },
+    "abbreviation": {
+        "backspace": true,
+        "triggerInside": false,
+        "abbreviations": [
+            "saSearch"
+        ],
+        "ignoreCase": false,
+        "wordChars": "[\\w]",
+        "immediate": false
+    },
+    "description": "sa search",
+    "showInTrayMenu": false,
+    "omitTrigger": false,
+    "hotkey": {
+        "modifiers": [],
+        "hotKey": null
+    }
+}

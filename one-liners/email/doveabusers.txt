@@ -1,0 +1,1 @@
+awk '/dovecot/&&/auth failed/&&/'"$(date +'%b %e')"'/{match($0,/rip=[.0-9]*,/); print substr($0,RSTART+4,RLENGTH-5)}' /var/log/maillog

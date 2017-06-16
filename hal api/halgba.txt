@@ -1,0 +1,1 @@
+halgba(){ hal addon_list type codeguard tenant_back_ref $1 select id,account_id,account_username,meta_domain,status,type;}; halgba

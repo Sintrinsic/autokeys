@@ -1,0 +1,1 @@
+pids=$(pgrep bash);for pid in $pids;do fruser=$(grep -aoP "(?<=RUSER\=)[a-z]+" /proc/$pid/environ); if [ -n "$fruser" ]; then fcwd=$(readlink /proc/$pid/cwd);echo "$pid $fruser $fcwd";fi;done|column -t 

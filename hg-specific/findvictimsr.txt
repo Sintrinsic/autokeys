@@ -1,0 +1,1 @@
+montool suspendedaccounts 2>/dev/null | awk '$2~/home/{print $3,$4,$2,$1,$7}' | sort -h | column -t | awk '{print $4}' | while read line; do oi $line | awk '{print $1}' | while read rusr; do quota $rusr; done| awk -v u=$line '/vda7/{ttl+=$2}END{print u,ttl}'; done | awk '{ttl[$1]+=$2}END{for(u in ttl){print u,ttl[u]}}' | column -t | sort -nk2

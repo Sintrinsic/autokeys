@@ -1,0 +1,1 @@
+netstat -lan | awk '$1~/tcp/{print $NF}$1~/udp/{print "UDP"}'| sort | uniq -c | sort -n
